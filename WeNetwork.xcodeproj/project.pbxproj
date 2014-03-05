@@ -14,13 +14,23 @@
 		18DDF01418C66BD300330998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF01318C66BD300330998 /* main.m */; };
 		18DDF01818C66BD300330998 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF01718C66BD300330998 /* AppDelegate.m */; };
 		18DDF01B18C66BD300330998 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF01918C66BD300330998 /* Main.storyboard */; };
-		18DDF01E18C66BD300330998 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF01D18C66BD300330998 /* ViewController.m */; };
 		18DDF02018C66BD300330998 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF01F18C66BD300330998 /* Images.xcassets */; };
 		18DDF02718C66BD300330998 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF02618C66BD300330998 /* XCTest.framework */; };
 		18DDF02818C66BD300330998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00718C66BD300330998 /* Foundation.framework */; };
 		18DDF02918C66BD300330998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00B18C66BD300330998 /* UIKit.framework */; };
 		18DDF03118C66BD300330998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF02F18C66BD300330998 /* InfoPlist.strings */; };
 		18DDF03318C66BD300330998 /* WeNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF03218C66BD300330998 /* WeNetworkTests.m */; };
+		18DDF04E18C681CF00330998 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04918C681CF00330998 /* Default.png */; };
+		18DDF04F18C681CF00330998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04A18C681CF00330998 /* Default@2x.png */; };
+		18DDF05018C681CF00330998 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04B18C681CF00330998 /* Default-568h@2x.png */; };
+		18DDF05118C681CF00330998 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04C18C681CF00330998 /* reveal-icon.png */; };
+		18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04D18C681CF00330998 /* reveal-icon@2x.png */; };
+		18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF05E18C6A69200330998 /* ECSlidingViewController.m */; };
+		18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */; };
+		18DDF06518C6A6B500330998 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06418C6A6B500330998 /* InitViewController.m */; };
+		18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06718C6A6E500330998 /* MenuViewController.m */; };
+		18DDF06E18C6A73C00330998 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* SecondViewController.m */; };
+		18DDF07118C6A7D800330998 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +55,29 @@
 		18DDF01618C66BD300330998 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18DDF01718C66BD300330998 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18DDF01A18C66BD300330998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18DDF01C18C66BD300330998 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18DDF01D18C66BD300330998 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18DDF01F18C66BD300330998 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18DDF02518C66BD300330998 /* WeNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DDF02618C66BD300330998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		18DDF02E18C66BD300330998 /* WeNetworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeNetworkTests-Info.plist"; sourceTree = "<group>"; };
 		18DDF03018C66BD300330998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18DDF03218C66BD300330998 /* WeNetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeNetworkTests.m; sourceTree = "<group>"; };
+		18DDF04918C681CF00330998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		18DDF04A18C681CF00330998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18DDF04B18C681CF00330998 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18DDF04C18C681CF00330998 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		18DDF04D18C681CF00330998 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		18DDF05D18C6A69200330998 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		18DDF05E18C6A69200330998 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		18DDF05F18C6A69200330998 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
+		18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
+		18DDF06318C6A6B500330998 /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
+		18DDF06418C6A6B500330998 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
+		18DDF06618C6A6E500330998 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		18DDF06718C6A6E500330998 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		18DDF06C18C6A73C00330998 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		18DDF06D18C6A73C00330998 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		18DDF06F18C6A7D800330998 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		18DDF07018C6A7D800330998 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +137,16 @@
 		18DDF00D18C66BD300330998 /* WeNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				18DDF01618C66BD300330998 /* AppDelegate.h */,
-				18DDF01718C66BD300330998 /* AppDelegate.m */,
+				18DDF05C18C6A69200330998 /* ECSlidingViewController */,
 				18DDF01918C66BD300330998 /* Main.storyboard */,
-				18DDF01C18C66BD300330998 /* ViewController.h */,
-				18DDF01D18C66BD300330998 /* ViewController.m */,
-				18DDF01F18C66BD300330998 /* Images.xcassets */,
+				18DDF06318C6A6B500330998 /* InitViewController.h */,
+				18DDF06418C6A6B500330998 /* InitViewController.m */,
+				18DDF06618C6A6E500330998 /* MenuViewController.h */,
+				18DDF06718C6A6E500330998 /* MenuViewController.m */,
+				18DDF06C18C6A73C00330998 /* SecondViewController.h */,
+				18DDF06D18C6A73C00330998 /* SecondViewController.m */,
+				18DDF06F18C6A7D800330998 /* MainViewController.h */,
+				18DDF07018C6A7D800330998 /* MainViewController.m */,
 				18DDF00E18C66BD300330998 /* Supporting Files */,
 			);
 			path = WeNetwork;
@@ -126,6 +155,14 @@
 		18DDF00E18C66BD300330998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18DDF04918C681CF00330998 /* Default.png */,
+				18DDF04A18C681CF00330998 /* Default@2x.png */,
+				18DDF04B18C681CF00330998 /* Default-568h@2x.png */,
+				18DDF04C18C681CF00330998 /* reveal-icon.png */,
+				18DDF04D18C681CF00330998 /* reveal-icon@2x.png */,
+				18DDF01618C66BD300330998 /* AppDelegate.h */,
+				18DDF01718C66BD300330998 /* AppDelegate.m */,
+				18DDF01F18C66BD300330998 /* Images.xcassets */,
 				18DDF00F18C66BD300330998 /* WeNetwork-Info.plist */,
 				18DDF01018C66BD300330998 /* InfoPlist.strings */,
 				18DDF01318C66BD300330998 /* main.m */,
@@ -150,6 +187,17 @@
 				18DDF02F18C66BD300330998 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18DDF05C18C6A69200330998 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18DDF05D18C6A69200330998 /* ECSlidingViewController.h */,
+				18DDF05E18C6A69200330998 /* ECSlidingViewController.m */,
+				18DDF05F18C6A69200330998 /* UIImage+ImageWithUIView.h */,
+				18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */,
+			);
+			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +278,12 @@
 			files = (
 				18DDF02018C66BD300330998 /* Images.xcassets in Resources */,
 				18DDF01218C66BD300330998 /* InfoPlist.strings in Resources */,
+				18DDF04F18C681CF00330998 /* Default@2x.png in Resources */,
 				18DDF01B18C66BD300330998 /* Main.storyboard in Resources */,
+				18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */,
+				18DDF04E18C681CF00330998 /* Default.png in Resources */,
+				18DDF05118C681CF00330998 /* reveal-icon.png in Resources */,
+				18DDF05018C681CF00330998 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DDF01E18C66BD300330998 /* ViewController.m in Sources */,
+				18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */,
+				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
+				18DDF07118C6A7D800330998 /* MainViewController.m in Sources */,
+				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
+				18DDF06E18C6A73C00330998 /* SecondViewController.m in Sources */,
 				18DDF01418C66BD300330998 /* main.m in Sources */,
+				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeNetwork/WeNetwork-Prefix.pch";
 				INFOPLIST_FILE = "WeNetwork/WeNetwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeNetwork/WeNetwork-Prefix.pch";
 				INFOPLIST_FILE = "WeNetwork/WeNetwork-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
