@@ -35,7 +35,7 @@
 //    
 //    self.section2 = [NSArray arrayWithObjects:@"notifications", @"everythignelse", nil];
 
-    self.menu = [NSArray arrayWithObjects:@"Main",@"Second", nil];
+    self.menu = [NSArray arrayWithObjects:@"Profile",@"Home",@"Messages",@"Settings",@"Invite", nil];
     
     [self.slidingViewController setAnchorRightPeekAmount:200.0f];
     self.slidingViewController.underRightWidthLayout = ECFullWidth;
@@ -63,7 +63,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = @"Cell";
+    NSString *cellIdentifier = @"menuCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];

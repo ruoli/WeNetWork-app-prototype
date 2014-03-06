@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
-
-@interface SecondViewController : UIViewController
+#import "ChatSliderViewController.h"
+@interface HomeViewController : UIViewController
 @property (strong,nonatomic)UIButton *menuBtn;
+@property (strong,nonatomic)UIButton *chatBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *peopleImageView;
 @end

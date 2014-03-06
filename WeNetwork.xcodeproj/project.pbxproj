@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095118C7D05500CAD97C /* MessagesViewController.m */; };
+		18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095418C7D06300CAD97C /* SettingsViewController.m */; };
+		18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095718C7D06F00CAD97C /* InviteViewController.m */; };
+		18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095A18C7D8A800CAD97C /* ChatSliderViewController.m */; };
 		18DDF00818C66BD300330998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00718C66BD300330998 /* Foundation.framework */; };
 		18DDF00A18C66BD300330998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00918C66BD300330998 /* CoreGraphics.framework */; };
 		18DDF00C18C66BD300330998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00B18C66BD300330998 /* UIKit.framework */; };
@@ -20,17 +24,14 @@
 		18DDF02918C66BD300330998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDF00B18C66BD300330998 /* UIKit.framework */; };
 		18DDF03118C66BD300330998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF02F18C66BD300330998 /* InfoPlist.strings */; };
 		18DDF03318C66BD300330998 /* WeNetworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF03218C66BD300330998 /* WeNetworkTests.m */; };
-		18DDF04E18C681CF00330998 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04918C681CF00330998 /* Default.png */; };
-		18DDF04F18C681CF00330998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04A18C681CF00330998 /* Default@2x.png */; };
-		18DDF05018C681CF00330998 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04B18C681CF00330998 /* Default-568h@2x.png */; };
 		18DDF05118C681CF00330998 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04C18C681CF00330998 /* reveal-icon.png */; };
 		18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DDF04D18C681CF00330998 /* reveal-icon@2x.png */; };
 		18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF05E18C6A69200330998 /* ECSlidingViewController.m */; };
 		18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */; };
 		18DDF06518C6A6B500330998 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06418C6A6B500330998 /* InitViewController.m */; };
 		18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06718C6A6E500330998 /* MenuViewController.m */; };
-		18DDF06E18C6A73C00330998 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* SecondViewController.m */; };
-		18DDF07118C6A7D800330998 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* MainViewController.m */; };
+		18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* HomeViewController.m */; };
+		18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18DB095018C7D05500CAD97C /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		18DB095118C7D05500CAD97C /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		18DB095318C7D06300CAD97C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		18DB095418C7D06300CAD97C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		18DB095618C7D06F00CAD97C /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
+		18DB095718C7D06F00CAD97C /* InviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteViewController.m; sourceTree = "<group>"; };
+		18DB095918C7D8A800CAD97C /* ChatSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSliderViewController.h; sourceTree = "<group>"; };
+		18DB095A18C7D8A800CAD97C /* ChatSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSliderViewController.m; sourceTree = "<group>"; };
 		18DDF00418C66BD300330998 /* WeNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DDF00718C66BD300330998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18DDF00918C66BD300330998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,9 +70,6 @@
 		18DDF02E18C66BD300330998 /* WeNetworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeNetworkTests-Info.plist"; sourceTree = "<group>"; };
 		18DDF03018C66BD300330998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18DDF03218C66BD300330998 /* WeNetworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeNetworkTests.m; sourceTree = "<group>"; };
-		18DDF04918C681CF00330998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		18DDF04A18C681CF00330998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		18DDF04B18C681CF00330998 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		18DDF04C18C681CF00330998 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
 		18DDF04D18C681CF00330998 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
 		18DDF05D18C6A69200330998 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
@@ -74,10 +80,10 @@
 		18DDF06418C6A6B500330998 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		18DDF06618C6A6E500330998 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		18DDF06718C6A6E500330998 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		18DDF06C18C6A73C00330998 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		18DDF06D18C6A73C00330998 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		18DDF06F18C6A7D800330998 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		18DDF07018C6A7D800330998 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		18DDF06C18C6A73C00330998 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		18DDF06D18C6A73C00330998 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		18DDF06F18C6A7D800330998 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		18DDF07018C6A7D800330998 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DB094F18C7CD7100CAD97C /* AppDetailsViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18DDF06C18C6A73C00330998 /* HomeViewController.h */,
+				18DDF06D18C6A73C00330998 /* HomeViewController.m */,
+				18DB095018C7D05500CAD97C /* MessagesViewController.h */,
+				18DB095118C7D05500CAD97C /* MessagesViewController.m */,
+				18DB095318C7D06300CAD97C /* SettingsViewController.h */,
+				18DB095418C7D06300CAD97C /* SettingsViewController.m */,
+				18DB095618C7D06F00CAD97C /* InviteViewController.h */,
+				18DB095718C7D06F00CAD97C /* InviteViewController.m */,
+				18DDF06F18C6A7D800330998 /* ProfileViewController.h */,
+				18DDF07018C6A7D800330998 /* ProfileViewController.m */,
+			);
+			name = AppDetailsViewControllers;
+			sourceTree = "<group>";
+		};
+		18DB095C18C7D90600CAD97C /* Sliders */ = {
+			isa = PBXGroup;
+			children = (
+				18DDF06618C6A6E500330998 /* MenuViewController.h */,
+				18DDF06718C6A6E500330998 /* MenuViewController.m */,
+				18DB095918C7D8A800CAD97C /* ChatSliderViewController.h */,
+				18DB095A18C7D8A800CAD97C /* ChatSliderViewController.m */,
+			);
+			name = Sliders;
+			sourceTree = "<group>";
+		};
 		18DDEFFB18C66BD300330998 = {
 			isa = PBXGroup;
 			children = (
@@ -137,16 +171,12 @@
 		18DDF00D18C66BD300330998 /* WeNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				18DB095C18C7D90600CAD97C /* Sliders */,
+				18DB094F18C7CD7100CAD97C /* AppDetailsViewControllers */,
 				18DDF05C18C6A69200330998 /* ECSlidingViewController */,
 				18DDF01918C66BD300330998 /* Main.storyboard */,
 				18DDF06318C6A6B500330998 /* InitViewController.h */,
 				18DDF06418C6A6B500330998 /* InitViewController.m */,
-				18DDF06618C6A6E500330998 /* MenuViewController.h */,
-				18DDF06718C6A6E500330998 /* MenuViewController.m */,
-				18DDF06C18C6A73C00330998 /* SecondViewController.h */,
-				18DDF06D18C6A73C00330998 /* SecondViewController.m */,
-				18DDF06F18C6A7D800330998 /* MainViewController.h */,
-				18DDF07018C6A7D800330998 /* MainViewController.m */,
 				18DDF00E18C66BD300330998 /* Supporting Files */,
 			);
 			path = WeNetwork;
@@ -155,9 +185,6 @@
 		18DDF00E18C66BD300330998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18DDF04918C681CF00330998 /* Default.png */,
-				18DDF04A18C681CF00330998 /* Default@2x.png */,
-				18DDF04B18C681CF00330998 /* Default-568h@2x.png */,
 				18DDF04C18C681CF00330998 /* reveal-icon.png */,
 				18DDF04D18C681CF00330998 /* reveal-icon@2x.png */,
 				18DDF01618C66BD300330998 /* AppDelegate.h */,
@@ -278,12 +305,9 @@
 			files = (
 				18DDF02018C66BD300330998 /* Images.xcassets in Resources */,
 				18DDF01218C66BD300330998 /* InfoPlist.strings in Resources */,
-				18DDF04F18C681CF00330998 /* Default@2x.png in Resources */,
 				18DDF01B18C66BD300330998 /* Main.storyboard in Resources */,
 				18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */,
-				18DDF04E18C681CF00330998 /* Default.png in Resources */,
 				18DDF05118C681CF00330998 /* reveal-icon.png in Resources */,
-				18DDF05018C681CF00330998 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */,
+				18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */,
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
+				18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
-				18DDF07118C6A7D800330998 /* MainViewController.m in Sources */,
+				18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */,
 				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
-				18DDF06E18C6A73C00330998 /* SecondViewController.m in Sources */,
+				18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */,
+				18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */,
+				18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */,
 				18DDF01418C66BD300330998 /* main.m in Sources */,
 				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
 			);
@@ -520,6 +548,7 @@
 				18DDF03818C66BD300330998 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18DDF03918C66BD300330998 /* Build configuration list for PBXNativeTarget "WeNetworkTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +557,7 @@
 				18DDF03B18C66BD300330998 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

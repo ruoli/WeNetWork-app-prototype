@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  InviteViewController.h
 //  WeNetwork
 //
 //  Created by Ruoli Zhou on 05/03/2014.
@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
-
-@interface MainViewController : UIViewController
-
+#import "ChatSliderViewController.h"
+@interface InviteViewController : UIViewController
 @property (strong,nonatomic)UIButton *menuBtn;
-
+@property (strong,nonatomic)UIButton *chatBtn;
 @end

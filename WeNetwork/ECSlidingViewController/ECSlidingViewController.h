@@ -2,8 +2,8 @@
 //  ECSlidingViewController.h
 //  ECSlidingViewController
 //
-//  Created by Michael Enriquez on 1/23/12.
-//  Copyright (c) 2012 EdgeCase. All rights reserved.
+//  Created by Ruoli Zhou on 05/03/2014.
+//  Copyright (c) 2014 Deszie. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
