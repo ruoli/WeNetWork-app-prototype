@@ -16,6 +16,7 @@
 
 @synthesize menuBtn;
 @synthesize chatBtn;
+@synthesize peopleImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +43,7 @@
                                                                instantiateViewControllerWithIdentifier:@"Chat"];
             }
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+//    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
 
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     menuBtn.frame = CGRectMake(8, 10, 34, 24);
@@ -55,6 +56,30 @@
     [chatBtn setBackgroundImage:[UIImage imageNamed:@"reveal-icon.png" ] forState:UIControlStateNormal];
     [chatBtn addTarget:self action:@selector(revealChat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.chatBtn];
+    
+    //Image in action
+    UIImage *image = [UIImage imageNamed:@"squirl.png"];
+    [self.peopleImageView setImage:image];
+    [peopleImageView setUserInteractionEnabled:YES];
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    
+    [peopleImageView addGestureRecognizer:swipeLeft];
+    [peopleImageView addGestureRecognizer:swipeRight];
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)swipe{
+    if (swipe.direction==UISwipeGestureRecognizerDirectionLeft) {
+        UIImage *image = [UIImage imageNamed:@"amazonUFO.png"];
+        [peopleImageView setImage:image];
+    }
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        UIImage *image = [UIImage imageNamed:@"squirl.png"];
+        [peopleImageView setImage:image];
+    }
 }
 
 

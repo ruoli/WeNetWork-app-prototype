@@ -31,10 +31,6 @@
 {
     [super viewDidLoad];
     
-//    self.section1 = [NSArray arrayWithObjects:@"me", @"friends", @"everything", nil];
-//    
-//    self.section2 = [NSArray arrayWithObjects:@"notifications", @"everythignelse", nil];
-
     self.menu = [NSArray arrayWithObjects:@"Profile",@"Home",@"Messages",@"Settings",@"Invite", nil];
     
     [self.slidingViewController setAnchorRightPeekAmount:200.0f];

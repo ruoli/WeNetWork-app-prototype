@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181ABFD518C91FC300BA6F04 /* squirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD418C91FC300BA6F04 /* squirl.png */; };
+		181ABFD718C925C500BA6F04 /* amazonUFO.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD618C925C500BA6F04 /* amazonUFO.png */; };
 		18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095118C7D05500CAD97C /* MessagesViewController.m */; };
 		18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095418C7D06300CAD97C /* SettingsViewController.m */; };
 		18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095718C7D06F00CAD97C /* InviteViewController.m */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181ABFD418C91FC300BA6F04 /* squirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squirl.png; sourceTree = "<group>"; };
+		181ABFD618C925C500BA6F04 /* amazonUFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazonUFO.png; sourceTree = "<group>"; };
 		18DB095018C7D05500CAD97C /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		18DB095118C7D05500CAD97C /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		18DB095318C7D06300CAD97C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -110,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181ABFD318C91FA700BA6F04 /* AppImages */ = {
+			isa = PBXGroup;
+			children = (
+				181ABFD618C925C500BA6F04 /* amazonUFO.png */,
+				181ABFD418C91FC300BA6F04 /* squirl.png */,
+				18DDF04C18C681CF00330998 /* reveal-icon.png */,
+				18DDF04D18C681CF00330998 /* reveal-icon@2x.png */,
+			);
+			name = AppImages;
+			sourceTree = "<group>";
+		};
 		18DB094F18C7CD7100CAD97C /* AppDetailsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +200,7 @@
 		18DDF00E18C66BD300330998 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18DDF04C18C681CF00330998 /* reveal-icon.png */,
-				18DDF04D18C681CF00330998 /* reveal-icon@2x.png */,
+				181ABFD318C91FA700BA6F04 /* AppImages */,
 				18DDF01618C66BD300330998 /* AppDelegate.h */,
 				18DDF01718C66BD300330998 /* AppDelegate.m */,
 				18DDF01F18C66BD300330998 /* Images.xcassets */,
@@ -306,7 +320,9 @@
 				18DDF02018C66BD300330998 /* Images.xcassets in Resources */,
 				18DDF01218C66BD300330998 /* InfoPlist.strings in Resources */,
 				18DDF01B18C66BD300330998 /* Main.storyboard in Resources */,
+				181ABFD518C91FC300BA6F04 /* squirl.png in Resources */,
 				18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */,
+				181ABFD718C925C500BA6F04 /* amazonUFO.png in Resources */,
 				18DDF05118C681CF00330998 /* reveal-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,7 +42,7 @@
                                                                instantiateViewControllerWithIdentifier:@"Chat"];
     }
     
-    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
+//    [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     self.menuBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     menuBtn.frame = CGRectMake(8, 10, 34, 24);
