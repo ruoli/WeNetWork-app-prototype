@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 
-    self.chatPeople = [NSArray arrayWithObjects:@"Profile",@"Home",@"Messages",@"Settings",@"Invite", nil];
+    self.chatPeople = [NSArray arrayWithObjects:@"one",@"two",@"three", nil];
     
     
     [self.slidingViewController setAnchorLeftPeekAmount:100.0f];
@@ -69,14 +69,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *identifier = [NSString stringWithFormat:@"%@", [self.chatPeople objectAtIndex:indexPath.row]];
-    UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-    
-    [self.slidingViewController anchorTopViewOffScreenTo:ECLeft animations:nil onComplete:^{
-        CGRect frame = self.slidingViewController.topViewController.view.frame;
-        self.slidingViewController.topViewController = newTopViewController;
-        self.slidingViewController.topViewController.view.frame = frame;
-        [self.slidingViewController resetTopView];
-    }];
+//    NSString *identifier = [NSString stringWithFormat:@"%@", [self.chatPeople objectAtIndex:indexPath.row]];
+//    UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+//    
+//    [self.slidingViewController anchorTopViewOffScreenTo:ECLeft animations:nil onComplete:^{
+//        CGRect frame = self.slidingViewController.topViewController.view.frame;
+//        self.slidingViewController.topViewController = newTopViewController;
+//        self.slidingViewController.topViewController.view.frame = frame;
+//        [self.slidingViewController resetTopView];
+//    }];
+}
+- (IBAction)backBtn:(id)sender {
 }
 @end

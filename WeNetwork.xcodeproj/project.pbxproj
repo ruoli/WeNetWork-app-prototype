@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181ABFD518C91FC300BA6F04 /* squirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD418C91FC300BA6F04 /* squirl.png */; };
 		181ABFD718C925C500BA6F04 /* amazonUFO.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD618C925C500BA6F04 /* amazonUFO.png */; };
+		181ABFDA18C93A1000BA6F04 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABFD918C93A1000BA6F04 /* ChatViewController.m */; };
 		18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095118C7D05500CAD97C /* MessagesViewController.m */; };
 		18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095418C7D06300CAD97C /* SettingsViewController.m */; };
 		18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095718C7D06F00CAD97C /* InviteViewController.m */; };
@@ -49,6 +50,8 @@
 /* Begin PBXFileReference section */
 		181ABFD418C91FC300BA6F04 /* squirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squirl.png; sourceTree = "<group>"; };
 		181ABFD618C925C500BA6F04 /* amazonUFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazonUFO.png; sourceTree = "<group>"; };
+		181ABFD818C93A1000BA6F04 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		181ABFD918C93A1000BA6F04 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		18DB095018C7D05500CAD97C /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		18DB095118C7D05500CAD97C /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		18DB095318C7D06300CAD97C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				18DB095718C7D06F00CAD97C /* InviteViewController.m */,
 				18DDF06F18C6A7D800330998 /* ProfileViewController.h */,
 				18DDF07018C6A7D800330998 /* ProfileViewController.m */,
+				181ABFD818C93A1000BA6F04 /* ChatViewController.h */,
+				181ABFD918C93A1000BA6F04 /* ChatViewController.m */,
 			);
 			name = AppDetailsViewControllers;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181ABFDA18C93A1000BA6F04 /* ChatViewController.m in Sources */,
 				18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */,
 				18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */,
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
