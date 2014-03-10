@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 
-    self.chatPeople = [NSArray arrayWithObjects:@"one",@"two",@"three", nil];
+    self.chatPeople = [NSArray arrayWithObjects:@"Peter",@"Lee",@"Anne", nil];
     
     
     [self.slidingViewController setAnchorLeftPeekAmount:100.0f];

@@ -54,6 +54,15 @@
     [chatBtn setBackgroundImage:[UIImage imageNamed:@"reveal-icon.png" ] forState:UIControlStateNormal];
     [chatBtn addTarget:self action:@selector(revealChat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.chatBtn];
+    
+    
+    //init data picker
+    //init picker
+    self.numberOfCol = @"";
+    self.countryPicker.showsSelectionIndicator = TRUE;
+    self.listOfCountries = [[NSArray alloc] initWithObjects:@"China",@"UK",@"USA",@"Japan",@"Switzland",@"Danmark",nil];
+    
+    [super viewDidLoad];
 }
 
 
@@ -72,5 +81,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//return the number of rows for picker
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.listOfCountries count];
+}
+
+//display details for picker
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.listOfCountries objectAtIndex:row];
+}
+
+//return the col num for picker
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
 }
 @end

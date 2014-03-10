@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ChatViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
 - (IBAction)back:(id)sender;
 
 @end

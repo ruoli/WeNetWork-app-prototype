@@ -35,6 +35,8 @@
 		18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06718C6A6E500330998 /* MenuViewController.m */; };
 		18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* HomeViewController.m */; };
 		18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* ProfileViewController.m */; };
+		DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */; };
+		DA200D1318CA21EA0005F5C4 /* LinkedinLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		18DDF06D18C6A73C00330998 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18DDF06F18C6A7D800330998 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		18DDF07018C6A7D800330998 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHomeViewController.h; sourceTree = "<group>"; };
+		DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHomeViewController.m; sourceTree = "<group>"; };
+		DA200D1118CA21EA0005F5C4 /* LinkedinLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinLoginViewController.h; sourceTree = "<group>"; };
+		DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 		18DDF00D18C66BD300330998 /* WeNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				DA200D0D18CA19160005F5C4 /* LinkedinController */,
 				18DB095C18C7D90600CAD97C /* Sliders */,
 				18DB094F18C7CD7100CAD97C /* AppDetailsViewControllers */,
 				18DDF05C18C6A69200330998 /* ECSlidingViewController */,
@@ -244,6 +251,17 @@
 				18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */,
 			);
 			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		DA200D0D18CA19160005F5C4 /* LinkedinController */ = {
+			isa = PBXGroup;
+			children = (
+				DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */,
+				DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */,
+				DA200D1118CA21EA0005F5C4 /* LinkedinLoginViewController.h */,
+				DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */,
+			);
+			name = LinkedinController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +371,7 @@
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
 				18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
+				DA200D1318CA21EA0005F5C4 /* LinkedinLoginViewController.m in Sources */,
 				18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */,
 				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
 				18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */,
@@ -360,6 +379,7 @@
 				18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */,
 				18DDF01418C66BD300330998 /* main.m in Sources */,
 				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
+				DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

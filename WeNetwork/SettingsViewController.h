@@ -10,7 +10,11 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "ChatSliderViewController.h"
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
+@property (weak, nonatomic) IBOutlet UIPickerView *countryPicker;
+
+@property(strong,nonatomic)NSArray * listOfCountries;
+@property(strong,nonatomic)NSString * numberOfCol;
 @end

@@ -1,18 +1,18 @@
 //
-//  ChatViewController.m
+//  LinkedinLoginViewController.m
 //  WeNetwork
 //
-//  Created by Ruoli Zhou on 06/03/2014.
+//  Created by zhour on 07/03/2014.
 //  Copyright (c) 2014 Deszie. All rights reserved.
 //
 
-#import "ChatViewController.h"
+#import "LinkedinLoginViewController.h"
 
-@interface ChatViewController ()
+@interface LinkedinLoginViewController ()
 
 @end
 
-@implementation ChatViewController
+@implementation LinkedinLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

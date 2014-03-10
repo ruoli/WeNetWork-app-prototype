@@ -1,5 +1,9 @@
 //
 //  UIImage+ImageWithUIView.m
+//  WeNetwork
+//
+//  Created by Ruoli Zhou on 05/03/2014.
+//  Copyright (c) 2014 Deszie. All rights reserved.
 //
 
 #import "UIImage+ImageWithUIView.h"
