@@ -14,5 +14,6 @@
 
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end

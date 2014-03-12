@@ -35,8 +35,10 @@
 		18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06718C6A6E500330998 /* MenuViewController.m */; };
 		18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* HomeViewController.m */; };
 		18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* ProfileViewController.m */; };
+		6B641BCA8F20463CBF610DF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9970A6F1592642C3A229BCCE /* libPods.a */; };
 		DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */; };
-		DA200D1318CA21EA0005F5C4 /* LinkedinLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */; };
+		DACD417C18D08140005B3747 /* LinkedinDataFetchController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */; };
+		DACD417F18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,10 +95,14 @@
 		18DDF06D18C6A73C00330998 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18DDF06F18C6A7D800330998 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		18DDF07018C6A7D800330998 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		9970A6F1592642C3A229BCCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHomeViewController.h; sourceTree = "<group>"; };
 		DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHomeViewController.m; sourceTree = "<group>"; };
-		DA200D1118CA21EA0005F5C4 /* LinkedinLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinLoginViewController.h; sourceTree = "<group>"; };
-		DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinLoginViewController.m; sourceTree = "<group>"; };
+		DACD417A18D08140005B3747 /* LinkedinDataFetchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinDataFetchController.h; sourceTree = "<group>"; };
+		DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinDataFetchController.m; sourceTree = "<group>"; };
+		DACD417D18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericVCSlideUIBtnRender.h; sourceTree = "<group>"; };
+		DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericVCSlideUIBtnRender.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				18DDF00A18C66BD300330998 /* CoreGraphics.framework in Frameworks */,
 				18DDF00C18C66BD300330998 /* UIKit.framework in Frameworks */,
 				18DDF00818C66BD300330998 /* Foundation.framework in Frameworks */,
+				6B641BCA8F20463CBF610DF7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +167,8 @@
 				18DDF06718C6A6E500330998 /* MenuViewController.m */,
 				18DB095918C7D8A800CAD97C /* ChatSliderViewController.h */,
 				18DB095A18C7D8A800CAD97C /* ChatSliderViewController.m */,
+				DACD417D18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.h */,
+				DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */,
 			);
 			name = Sliders;
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 				18DDF02C18C66BD300330998 /* WeNetworkTests */,
 				18DDF00618C66BD300330998 /* Frameworks */,
 				18DDF00518C66BD300330998 /* Products */,
+				C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +200,7 @@
 				18DDF00918C66BD300330998 /* CoreGraphics.framework */,
 				18DDF00B18C66BD300330998 /* UIKit.framework */,
 				18DDF02618C66BD300330998 /* XCTest.framework */,
+				9970A6F1592642C3A229BCCE /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,8 +269,8 @@
 			children = (
 				DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */,
 				DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */,
-				DA200D1118CA21EA0005F5C4 /* LinkedinLoginViewController.h */,
-				DA200D1218CA21EA0005F5C4 /* LinkedinLoginViewController.m */,
+				DACD417A18D08140005B3747 /* LinkedinDataFetchController.h */,
+				DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */,
 			);
 			name = LinkedinController;
 			sourceTree = "<group>";
@@ -271,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18DDF03618C66BD300330998 /* Build configuration list for PBXNativeTarget "WeNetwork" */;
 			buildPhases = (
+				1E7C23461FCF4D5EA0818257 /* Check Pods Manifest.lock */,
 				18DDF00018C66BD300330998 /* Sources */,
 				18DDF00118C66BD300330998 /* Frameworks */,
 				18DDF00218C66BD300330998 /* Resources */,
+				86145FAB3D1446AA89CB2A69 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,6 +373,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E7C23461FCF4D5EA0818257 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86145FAB3D1446AA89CB2A69 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18DDF00018C66BD300330998 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -368,10 +414,10 @@
 				181ABFDA18C93A1000BA6F04 /* ChatViewController.m in Sources */,
 				18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */,
 				18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */,
+				DACD417C18D08140005B3747 /* LinkedinDataFetchController.m in Sources */,
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
 				18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
-				DA200D1318CA21EA0005F5C4 /* LinkedinLoginViewController.m in Sources */,
 				18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */,
 				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
 				18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */,
@@ -380,6 +426,7 @@
 				18DDF01418C66BD300330998 /* main.m in Sources */,
 				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
 				DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */,
+				DACD417F18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +550,7 @@
 		};
 		18DDF03718C66BD300330998 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -517,6 +565,7 @@
 		};
 		18DDF03818C66BD300330998 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

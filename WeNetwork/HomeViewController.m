@@ -99,4 +99,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)testprefs:(id)sender {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSLog(@"new win: %@", [prefs stringForKey:@"emailAddress"]);
+}
 @end
