@@ -1,5 +1,5 @@
 //
-//  GenericVCSlideUIBtnRender.h
+//  LinkedinDataFetchController.h
 //  WeNetwork
 //
 //  Created by zhour on 12/03/2014.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GenericVCSlideUIBtnRender : NSObject
-@property (strong,nonatomic)UIViewController * vc;
+@interface LinkedinDataFetcher : NSObject
+
+-(void)loadDataFromLinkedinToLocalDefault:(NSDictionary *)results;
+
 @end

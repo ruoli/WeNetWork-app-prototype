@@ -37,8 +37,11 @@
 		18DDF07118C6A7D800330998 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* ProfileViewController.m */; };
 		6B641BCA8F20463CBF610DF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9970A6F1592642C3A229BCCE /* libPods.a */; };
 		DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */; };
-		DACD417C18D08140005B3747 /* LinkedinDataFetchController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */; };
-		DACD417F18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */; };
+		DACD417C18D08140005B3747 /* LinkedinDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417B18D08140005B3747 /* LinkedinDataFetcher.m */; };
+		DACD418218D0BD32005B3747 /* ProfileDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD418118D0BD32005B3747 /* ProfileDetailsViewController.m */; };
+		DACD418518D0D1F8005B3747 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD418418D0D1F8005B3747 /* SDWebImage.framework */; };
+		DACD418718D0D238005B3747 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD418618D0D238005B3747 /* ImageIO.framework */; };
+		DACD418918D0D412005B3747 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DACD418818D0D412005B3747 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,10 +102,13 @@
 		C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHomeViewController.h; sourceTree = "<group>"; };
 		DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHomeViewController.m; sourceTree = "<group>"; };
-		DACD417A18D08140005B3747 /* LinkedinDataFetchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinDataFetchController.h; sourceTree = "<group>"; };
-		DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinDataFetchController.m; sourceTree = "<group>"; };
-		DACD417D18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericVCSlideUIBtnRender.h; sourceTree = "<group>"; };
-		DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericVCSlideUIBtnRender.m; sourceTree = "<group>"; };
+		DACD417A18D08140005B3747 /* LinkedinDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinDataFetcher.h; sourceTree = "<group>"; };
+		DACD417B18D08140005B3747 /* LinkedinDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinDataFetcher.m; sourceTree = "<group>"; };
+		DACD418018D0BD32005B3747 /* ProfileDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailsViewController.h; sourceTree = "<group>"; };
+		DACD418118D0BD32005B3747 /* ProfileDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailsViewController.m; sourceTree = "<group>"; };
+		DACD418418D0D1F8005B3747 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		DACD418618D0D238005B3747 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		DACD418818D0D412005B3747 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACD418718D0D238005B3747 /* ImageIO.framework in Frameworks */,
+				DACD418518D0D1F8005B3747 /* SDWebImage.framework in Frameworks */,
 				18DDF00A18C66BD300330998 /* CoreGraphics.framework in Frameworks */,
 				18DDF00C18C66BD300330998 /* UIKit.framework in Frameworks */,
 				18DDF00818C66BD300330998 /* Foundation.framework in Frameworks */,
@@ -133,6 +141,7 @@
 		181ABFD318C91FA700BA6F04 /* AppImages */ = {
 			isa = PBXGroup;
 			children = (
+				DACD418818D0D412005B3747 /* placeholder.png */,
 				181ABFD618C925C500BA6F04 /* amazonUFO.png */,
 				181ABFD418C91FC300BA6F04 /* squirl.png */,
 				18DDF04C18C681CF00330998 /* reveal-icon.png */,
@@ -156,6 +165,8 @@
 				18DDF07018C6A7D800330998 /* ProfileViewController.m */,
 				181ABFD818C93A1000BA6F04 /* ChatViewController.h */,
 				181ABFD918C93A1000BA6F04 /* ChatViewController.m */,
+				DACD418018D0BD32005B3747 /* ProfileDetailsViewController.h */,
+				DACD418118D0BD32005B3747 /* ProfileDetailsViewController.m */,
 			);
 			name = AppDetailsViewControllers;
 			sourceTree = "<group>";
@@ -167,8 +178,6 @@
 				18DDF06718C6A6E500330998 /* MenuViewController.m */,
 				18DB095918C7D8A800CAD97C /* ChatSliderViewController.h */,
 				18DB095A18C7D8A800CAD97C /* ChatSliderViewController.m */,
-				DACD417D18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.h */,
-				DACD417E18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m */,
 			);
 			name = Sliders;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 		18DDEFFB18C66BD300330998 = {
 			isa = PBXGroup;
 			children = (
+				DACD418418D0D1F8005B3747 /* SDWebImage.framework */,
 				18DDF00D18C66BD300330998 /* WeNetwork */,
 				18DDF02C18C66BD300330998 /* WeNetworkTests */,
 				18DDF00618C66BD300330998 /* Frameworks */,
@@ -196,6 +206,7 @@
 		18DDF00618C66BD300330998 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DACD418618D0D238005B3747 /* ImageIO.framework */,
 				18DDF00718C66BD300330998 /* Foundation.framework */,
 				18DDF00918C66BD300330998 /* CoreGraphics.framework */,
 				18DDF00B18C66BD300330998 /* UIKit.framework */,
@@ -269,8 +280,8 @@
 			children = (
 				DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */,
 				DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */,
-				DACD417A18D08140005B3747 /* LinkedinDataFetchController.h */,
-				DACD417B18D08140005B3747 /* LinkedinDataFetchController.m */,
+				DACD417A18D08140005B3747 /* LinkedinDataFetcher.h */,
+				DACD417B18D08140005B3747 /* LinkedinDataFetcher.m */,
 			);
 			name = LinkedinController;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 				18DDF01B18C66BD300330998 /* Main.storyboard in Resources */,
 				181ABFD518C91FC300BA6F04 /* squirl.png in Resources */,
 				18DDF05218C681CF00330998 /* reveal-icon@2x.png in Resources */,
+				DACD418918D0D412005B3747 /* placeholder.png in Resources */,
 				181ABFD718C925C500BA6F04 /* amazonUFO.png in Resources */,
 				18DDF05118C681CF00330998 /* reveal-icon.png in Resources */,
 			);
@@ -414,7 +426,7 @@
 				181ABFDA18C93A1000BA6F04 /* ChatViewController.m in Sources */,
 				18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */,
 				18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */,
-				DACD417C18D08140005B3747 /* LinkedinDataFetchController.m in Sources */,
+				DACD417C18D08140005B3747 /* LinkedinDataFetcher.m in Sources */,
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
 				18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
@@ -426,7 +438,7 @@
 				18DDF01418C66BD300330998 /* main.m in Sources */,
 				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
 				DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */,
-				DACD417F18D0ADAE005B3747 /* GenericVCSlideUIBtnRender.m in Sources */,
+				DACD418218D0BD32005B3747 /* ProfileDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +566,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeNetwork/WeNetwork-Prefix.pch";
 				INFOPLIST_FILE = "WeNetwork/WeNetwork-Info.plist";
@@ -569,6 +585,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WeNetwork/WeNetwork-Prefix.pch";
 				INFOPLIST_FILE = "WeNetwork/WeNetwork-Info.plist";

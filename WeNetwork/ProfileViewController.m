@@ -16,6 +16,7 @@
 
 @synthesize menuBtn;
 @synthesize chatBtn;
+@synthesize prefs;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    prefs = [NSUserDefaults standardUserDefaults];
+    
 	self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -55,6 +59,19 @@
     [chatBtn setBackgroundImage:[UIImage imageNamed:@"reveal-icon.png" ] forState:UIControlStateNormal];
     [chatBtn addTarget:self action:@selector(revealChat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.chatBtn];
+    
+    
+    [self.profileImage setImageWithURL:[NSURL URLWithString:[prefs stringForKey:@"pictureUrl"]]
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    //add tap gesture to profile image
+    UITapGestureRecognizer *tap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.profileImage addGestureRecognizer:tap];
+}
+
+-(void)tapAction
+{
+    [self performSegueWithIdentifier:@"toProfileDetails" sender:self];
 }
 
 
@@ -73,5 +90,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ProfileDetailsViewController * pdv = [segue destinationViewController];
+    if (self.emailDisplaySwitcher.on) {
+        pdv.email = [prefs stringForKey:@"emailAddress"];
+    }
+    if (self.firstNameDisplaySwitcher.on) {
+        pdv.firstName = [prefs stringForKey:@"firstName"];
+    }
+    if (self.lastNameDisplaySwitcher.on) {
+        pdv.lastName = [prefs stringForKey:@"lastName"];
+    }
+    if (self.industryDisplaySwitcher.on) {
+        pdv.industry = [prefs stringForKey:@"industry"];
+    }
+    if (self.summaryDisplaySwitcher.on) {
+        pdv.summary = [prefs stringForKey:@"summary"];
+    }
 }
 @end

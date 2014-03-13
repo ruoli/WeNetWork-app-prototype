@@ -11,7 +11,7 @@
 #import "LIALinkedInHttpClient.h"
 #import "LIALinkedInApplication.h"
 #import "InitViewController.h"
-#import "LinkedinDataFetchController.h"
+#import "LinkedinDataFetcher.h"
 
 @interface AppHomeViewController : UIViewController
 @property (strong,nonatomic) NSDictionary *results;

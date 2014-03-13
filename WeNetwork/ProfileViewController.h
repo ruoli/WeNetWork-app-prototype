@@ -10,10 +10,21 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "ChatSliderViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "ProfileDetailsViewController.h"
 @interface ProfileViewController : UIViewController
 
+@property (strong,nonatomic)NSUserDefaults *prefs;
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+
+@property (weak, nonatomic) IBOutlet UISwitch *emailDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *firstNameDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *lastNameDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *industryDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *summaryDisplaySwitcher;
+
 
 @end

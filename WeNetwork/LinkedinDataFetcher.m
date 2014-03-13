@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Deszie. All rights reserved.
 //
 
-#import "LinkedinDataFetchController.h"
+#import "LinkedinDataFetcher.h"
 
-@implementation LinkedinDataFetchController
+@implementation LinkedinDataFetcher
 
 
 -(void)loadDataFromLinkedinToLocalDefault:(NSDictionary *)results

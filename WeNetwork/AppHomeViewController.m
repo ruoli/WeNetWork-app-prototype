@@ -37,19 +37,25 @@
 }
 
 - (IBAction)didTapConnectWithLinkedIn:(id)sender {
-    [self.client getAuthorizationCode:^(NSString *code) {
-        [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
-            NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
-            [self requestMeWithToken:accessToken];
-        }                   failure:^(NSError *error) {
-            NSLog(@"Quering accessToken failed %@", error);
-        }];
-    }                      cancel:^{
-        NSLog(@"Authorization was cancelled by user");
-    }                     failure:^(NSError *error) {
-        NSLog(@"Authorization failed %@", error);
-    }];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
+    if ([prefs stringForKey:@"emailAddress"] != NULL) {
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+        
+    } else {
+        [self.client getAuthorizationCode:^(NSString *code) {
+            [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
+                NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
+                [self requestMeWithToken:accessToken];
+            }                   failure:^(NSError *error) {
+                NSLog(@"Quering accessToken failed %@", error);
+            }];
+        }                      cancel:^{
+            NSLog(@"Authorization was cancelled by user");
+        }                     failure:^(NSError *error) {
+            NSLog(@"Authorization failed %@", error);
+        }];
+    }
 }
 
 
@@ -81,7 +87,7 @@
 
 -(void)setUserDefaultData:(NSDictionary *)results
 {
-    LinkedinDataFetchController * controller = [[LinkedinDataFetchController alloc] init];
+    LinkedinDataFetcher * controller = [[LinkedinDataFetcher alloc] init];
     [controller loadDataFromLinkedinToLocalDefault:results];
 }
 
