@@ -102,6 +102,6 @@
 
 - (IBAction)testprefs:(id)sender {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSLog(@"new win: %@", [prefs stringForKey:@"emailAddress"]);
+    NSLog(@"new win: %@", [prefs objectForKey:@"name"]);
 }
 @end

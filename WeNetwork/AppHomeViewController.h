@@ -15,4 +15,5 @@
 
 @interface AppHomeViewController : UIViewController
 @property (strong,nonatomic) NSDictionary *results;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @end

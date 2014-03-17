@@ -33,10 +33,15 @@
                                     <action selector="didTapConnectWithLinkedIn:" destination="ObS-Mw-VMg" eventType="touchUpInside" id="NRi-9V-Yxr"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-a6-vmO">
+                                <rect key="frame" x="150" y="307" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="9EK-a6-vmO" id="eR6-CZ-U9P"/>
                         <segue destination="N46-Rl-jcY" kind="modal" identifier="loginSegue" id="Ef5-oO-KDZ"/>
                     </connections>
                 </viewController>

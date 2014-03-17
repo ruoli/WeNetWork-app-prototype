@@ -10,9 +10,12 @@
 
 @interface AppHomeViewController ()
 
+@property(strong,nonatomic)NSUserDefaults *prefs;
 @end
 
 @implementation AppHomeViewController
+
+@synthesize prefs;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +30,9 @@
 {
     [super viewDidLoad];
     self.results = [[NSDictionary alloc] init];
-	// Do any additional setup after loading the view.
+    prefs = [NSUserDefaults standardUserDefaults];
+    self.indicator.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,7 +42,6 @@
 }
 
 - (IBAction)didTapConnectWithLinkedIn:(id)sender {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     if ([prefs stringForKey:@"emailAddress"] != NULL) {
         [self performSegueWithIdentifier:@"loginSegue" sender:self];
@@ -60,17 +64,23 @@
 
 
 - (void)requestMeWithToken:(NSString *)accessToken {
-    NSString * accessJsonUrl = [NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,picture-url,email-address,industry,positions,summary)?oauth2_access_token=%@&format=json", accessToken];
+    NSString * accessJsonUrl = [NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,picture-url,email-address,industry,positions:(title,company:(name)),skills:(skill),educations:(degree))?oauth2_access_token=%@&format=json", accessToken];
+    self.indicator.hidden = NO;
+    [self.indicator startAnimating];
     [self.client GET:accessJsonUrl parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-        self.results = result;
-        if ([self.results count] == 7) {
-            [self setUserDefaultData:self.results];
-            [self performSegueWithIdentifier:@"loginSegue" sender:self];
-        }
-        NSLog(@"current user %@", self.results);
-    }        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"failed to fetch current user %@", error);
+            self.results = result;
+            if ([self.results count] > 4) {
+                [self setUserDefaultData:self.results];
+                [self performSegueWithIdentifier:@"loginSegue" sender:self];
+                [self.indicator stopAnimating];
+                self.indicator.hidden = YES;
+            }
+            NSLog(@"current user %@", self.results);
+        }        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"failed to fetch current user %@", error);
     }];
+    
+    
 }
 
 - (LIALinkedInHttpClient *)client {
@@ -78,7 +88,7 @@
                                                                                     clientId:@"77am742yc947kh"
                                                                                 clientSecret:@"oO3x5Nmvexnsme2N"
                                                                                        state:@"DCEEFWF45453sdffef424"
-                                                                               grantedAccess:@[@"r_emailaddress", @"r_emailaddress",@"r_basicprofile"]];
+                                                                               grantedAccess:@[@"r_emailaddress",@"r_basicprofile",@"r_fullprofile"]];
  
     return [LIALinkedInHttpClient clientForApplication:application presentingViewController:nil];
 }
@@ -89,6 +99,7 @@
 {
     LinkedinDataFetcher * controller = [[LinkedinDataFetcher alloc] init];
     [controller loadDataFromLinkedinToLocalDefault:results];
+    [controller setMasterListToPrefs];
 }
 
 @end
