@@ -64,7 +64,7 @@
 
 
 - (void)requestMeWithToken:(NSString *)accessToken {
-    NSString * accessJsonUrl = [NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,picture-url,email-address,industry,positions:(title,company:(name)),skills:(skill),educations:(degree))?oauth2_access_token=%@&format=json", accessToken];
+    NSString * accessJsonUrl = [NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,picture-url,email-address,industry,positions:(title,company:(name)),skills:(skill),educations,summary)?oauth2_access_token=%@&format=json", accessToken];
     self.indicator.hidden = NO;
     [self.indicator startAnimating];
     [self.client GET:accessJsonUrl parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Deszie. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "SelfProfileViewController.h"
 
-@interface ProfileViewController ()
+@interface SelfProfileViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation SelfProfileViewController
 
 @synthesize menuBtn;
 @synthesize chatBtn;
@@ -22,7 +22,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -94,15 +93,15 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ProfileDetailsViewController * pdv = [segue destinationViewController];
-    if (self.emailDisplaySwitcher.on) {
-        pdv.email = [prefs stringForKey:@"emailAddress"];
+    SelfProfileDetailsViewController * pdv = [segue destinationViewController];
+    if (self.companyHistoryDisplaySwitcher.on) {
+        pdv.companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
     }
-    if (self.firstNameDisplaySwitcher.on) {
-        pdv.firstName = [prefs stringForKey:@"firstName"];
+    if (self.educationHistoryDisplaySwitcher.on) {
+        pdv.educationList = [[prefs objectForKey:@"masterList"] objectAtIndex:0];
     }
-    if (self.lastNameDisplaySwitcher.on) {
-        pdv.lastName = [prefs stringForKey:@"lastName"];
+    if (self.skillsDisplaySwitcher.on) {
+        pdv.skillList = [[prefs objectForKey:@"masterList"] objectAtIndex:2];
     }
     if (self.industryDisplaySwitcher.on) {
         pdv.industry = [prefs stringForKey:@"industry"];

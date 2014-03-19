@@ -50,8 +50,8 @@
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:masterList forKey:@"masterList"];
-    NSLog(@"degree: %@", [[masterList objectAtIndex:0] objectAtIndex:0]);
-    NSLog(@"company: %@", [[[masterList objectAtIndex:1] objectAtIndex:0] objectForKey:@"company"]);
-    NSLog(@"title: %@", [[[masterList objectAtIndex:1] objectAtIndex:0] objectForKey:@"title"]);
+    NSLog(@"degree: %@", [[prefs objectForKey:@"masterList"] objectAtIndex:0]);
+    NSLog(@"company: %@", [[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"title"]);
+    NSLog(@"skill: %@", [[[prefs objectForKey:@"masterList"]  objectAtIndex:2] objectAtIndex:0]);
 }
 @end

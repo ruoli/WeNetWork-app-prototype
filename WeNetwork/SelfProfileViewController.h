@@ -11,8 +11,8 @@
 #import "MenuViewController.h"
 #import "ChatSliderViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "ProfileDetailsViewController.h"
-@interface ProfileViewController : UIViewController
+#import "SelfProfileDetailsViewController.h"
+@interface SelfProfileViewController : UIViewController
 
 @property (strong,nonatomic)NSUserDefaults *prefs;
 @property (strong,nonatomic)UIButton *menuBtn;
@@ -20,9 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 
-@property (weak, nonatomic) IBOutlet UISwitch *emailDisplaySwitcher;
-@property (weak, nonatomic) IBOutlet UISwitch *firstNameDisplaySwitcher;
-@property (weak, nonatomic) IBOutlet UISwitch *lastNameDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *companyHistoryDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *educationHistoryDisplaySwitcher;
+@property (weak, nonatomic) IBOutlet UISwitch *skillsDisplaySwitcher;
 @property (weak, nonatomic) IBOutlet UISwitch *industryDisplaySwitcher;
 @property (weak, nonatomic) IBOutlet UISwitch *summaryDisplaySwitcher;
 
