@@ -10,8 +10,14 @@
 #import "ECSlidingViewController.h"
 #import "MenuViewController.h"
 #import "ChatSliderViewController.h"
-@interface HomeViewController : UIViewController
+#import "ServiceConnector.h"
+#import "JSONDictionaryExtensions.h"
+
+
+@interface HomeViewController : UIViewController <ServiceConnectorDelegate>
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *peopleImageView;
+
+@property (strong,nonatomic)ServiceConnector *serviceConnector;
 @end

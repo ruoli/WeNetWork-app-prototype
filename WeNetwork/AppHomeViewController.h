@@ -12,8 +12,9 @@
 #import "LIALinkedInApplication.h"
 #import "InitViewController.h"
 #import "LinkedinDataFetcher.h"
+#import "ServiceConnector.h"
 
-@interface AppHomeViewController : UIViewController
+@interface AppHomeViewController : UIViewController 
 @property (strong,nonatomic) NSDictionary *results;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @end

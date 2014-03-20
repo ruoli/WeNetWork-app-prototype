@@ -11,11 +11,12 @@
 @interface AppHomeViewController ()
 
 @property(strong,nonatomic)NSUserDefaults *prefs;
+@property(strong,nonatomic)ServiceConnector *serviceConnector;
 @end
 
 @implementation AppHomeViewController
 
-@synthesize prefs;
+@synthesize prefs,serviceConnector;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -100,7 +101,13 @@
     LinkedinDataFetcher * controller = [[LinkedinDataFetcher alloc] init];
     [controller loadDataFromLinkedinToLocalDefault:results];
     [controller setMasterListToPrefs];
+    
+    serviceConnector = [[ServiceConnector alloc] init];
+    [serviceConnector postTest];
 }
+
+
+
 
 @end
 

@@ -30,28 +30,17 @@
         }
         else if ([[results objectForKey:keyName] isKindOfClass:[NSArray class]]) {
             [masterList addObject:[results objectForKey:keyName]];
-//            [self loadDataFromLinkedinToLocalDefault:[[results objectForKey:keyName] objectAtIndex:i]];
             
         }
         else if ([[results objectForKey:keyName] isKindOfClass:[NSString class]]){
             [prefs setObject:[results objectForKey:keyName] forKey:keyName];
         }
     }
-    
-//    [prefs setObject:skillList forKey:@"skillList"];
-    
-    
-//    NSLog(@"skill: %@", skillList);
-//    NSLog(@"skill: %@", [prefs objectForKey:@"degree"]);
-//    NSLog(@"skill: %@", [prefs objectForKey:@"title"]);
 }
 
 -(void)setMasterListToPrefs
 {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:masterList forKey:@"masterList"];
-    NSLog(@"degree: %@", [[prefs objectForKey:@"masterList"] objectAtIndex:0]);
-    NSLog(@"company: %@", [[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"title"]);
-    NSLog(@"skill: %@", [[[prefs objectForKey:@"masterList"]  objectAtIndex:2] objectAtIndex:0]);
 }
 @end

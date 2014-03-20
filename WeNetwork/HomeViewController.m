@@ -14,9 +14,7 @@
 
 @implementation HomeViewController
 
-@synthesize menuBtn;
-@synthesize chatBtn;
-@synthesize peopleImageView;
+@synthesize menuBtn,chatBtn,peopleImageView,serviceConnector;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,6 +66,12 @@
     
     [peopleImageView addGestureRecognizer:swipeLeft];
     [peopleImageView addGestureRecognizer:swipeRight];
+    
+    
+    //test data received or not
+    serviceConnector = [[ServiceConnector alloc] init];
+    serviceConnector.delegate = self;
+    [serviceConnector retrieveDataFromDB];
 }
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)swipe{
@@ -104,4 +108,12 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSLog(@"new win: %@", [prefs objectForKey:@"name"]);
 }
+
+-(void)requestReturnedData:(NSData *)data
+{
+    NSLog(@"%@", data);
+    NSDictionary *dictionary = [NSDictionary dictionaryWithJSONData:data];
+    NSLog(@"test receive 1st id: %@", dictionary );
+}
+
 @end
