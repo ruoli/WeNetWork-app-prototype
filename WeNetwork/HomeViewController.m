@@ -14,7 +14,8 @@
 
 @implementation HomeViewController
 
-@synthesize menuBtn,chatBtn,peopleImageView,serviceConnector;
+@synthesize menuBtn,chatBtn,peopleImageView,serviceConnector,dataListForHomeView;
+@synthesize firstNameLabel,lastNameLabel,industryLabel,companyLabel,positionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    dataListForHomeView = [[NSArray alloc] init];
+    
 	self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -111,9 +114,15 @@
 
 -(void)requestReturnedData:(NSData *)data
 {
-    NSLog(@"%@", data);
-    NSDictionary *dictionary = [NSDictionary dictionaryWithJSONData:data];
-    NSLog(@"test receive 1st id: %@", dictionary );
+    
+    NSError *error;
+    dataListForHomeView = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error]];
+    NSLog(@"%@", dataListForHomeView);
+    firstNameLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"first_name"];
+    lastNameLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"last_name"];
+    industryLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"industry"];
+    positionLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"position"];
+    companyLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"company"];
 }
 
 @end

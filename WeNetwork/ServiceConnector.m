@@ -45,10 +45,13 @@
     [request addValue:@"postValues" forHTTPHeaderField:@"METHOD"];
     
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    [dictionary setValue:@"ssht75548" forKey:@"id"];
-    [dictionary setValue:@"tmd" forKey:@"first_name"];
-    [dictionary setValue:@"nmb" forKey:@"last_name"];
-    [dictionary setValue:@"goog" forKey:@"industry"];
+    [dictionary setValue:[prefs objectForKey:@"emailAddress"] forKey:@"id"];
+    [dictionary setValue:[prefs objectForKey:@"firstName"] forKey:@"first_name"];
+    [dictionary setValue:[prefs objectForKey:@"lastName"] forKey:@"last_name"];
+    [dictionary setValue:[prefs objectForKey:@"industry"] forKey:@"industry"];
+    [dictionary setValue:[prefs objectForKey:@"pictureUrl"] forKey:@"picture_url"];
+    [dictionary setValue:[[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"title"] forKey:@"position"];
+    [dictionary setValue:[[[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"company"] objectForKey:@"name"] forKey:@"company"];
     
     NSData *data = [[dictionary copy] JSONValue];
     

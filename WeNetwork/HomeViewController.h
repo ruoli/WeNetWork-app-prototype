@@ -20,4 +20,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *peopleImageView;
 
 @property (strong,nonatomic)ServiceConnector *serviceConnector;
+@property (strong,nonatomic)NSArray *dataListForHomeView;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lastNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *industryLabel;
+@property (strong, nonatomic) IBOutlet UILabel *companyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *positionLabel;
+
 @end
