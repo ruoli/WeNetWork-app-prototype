@@ -9,7 +9,7 @@
 #import "SelfProfileViewController.h"
 
 @interface SelfProfileViewController ()
-
+@property(strong,nonatomic)ServiceConnector *serviceConnector;
 @end
 
 @implementation SelfProfileViewController
@@ -17,6 +17,7 @@
 @synthesize menuBtn;
 @synthesize chatBtn;
 @synthesize prefs;
+@synthesize serviceConnector;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -109,5 +110,7 @@
     if (self.summaryDisplaySwitcher.on) {
         pdv.summary = [prefs stringForKey:@"summary"];
     }
+    
+    
 }
 @end

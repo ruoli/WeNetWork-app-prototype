@@ -103,7 +103,7 @@
     [controller setMasterListToPrefs];
     
     serviceConnector = [[ServiceConnector alloc] init];
-    [serviceConnector postTest];
+    [serviceConnector postProfileData];
 }
 
 

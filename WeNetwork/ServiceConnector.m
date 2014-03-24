@@ -37,7 +37,7 @@
     
 }
 
--(void)postTest{
+-(void)postProfileData{
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/index.php"]];
     
@@ -51,7 +51,7 @@
     [dictionary setValue:[prefs objectForKey:@"industry"] forKey:@"industry"];
     [dictionary setValue:[prefs objectForKey:@"pictureUrl"] forKey:@"picture_url"];
     [dictionary setValue:[[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"title"] forKey:@"position"];
-    [dictionary setValue:[[[[[prefs objectForKey:@"masterList"] objectAtIndex:1] objectAtIndex:0] objectForKey:@"company"] objectForKey:@"name"] forKey:@"company"];
+    [dictionary setValue:self.getCompanyHistoryList forKey:@"company"];
     
     NSData *data = [[dictionary copy] JSONValue];
     
@@ -65,6 +65,8 @@
     
 }
 
+
+
 -(void)retrieveDataFromDB
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/testgetpost.php"]];
@@ -72,6 +74,19 @@
     if(!connection){
         NSLog(@"Connection Failed");
     }
+}
+
+
+-(NSString *)getCompanyHistoryList
+{
+    NSString * companies = @"";
+    NSArray * companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
+    for (int i=0; i<[companyList count]; i++) {
+        NSString *companyName = [[[companyList objectAtIndex:i] objectForKey:@"company"] objectForKey:@"name"];
+        
+        companies = [companies stringByAppendingString:[NSString stringWithFormat:@"%@,", companyName]];
+    }
+    return [companies substringToIndex:[companies length]-1];;
 }
 
 #pragma mark - Data connection delegate -

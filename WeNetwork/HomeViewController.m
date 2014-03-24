@@ -7,15 +7,18 @@
 //
 
 #import "HomeViewController.h"
+#define LATEST_COMPANY_NAME ((int) 0)
 
 @interface HomeViewController ()
-
+@property(strong, nonatomic)NSString * idKey;
+@property(assign, nonatomic)NSInteger profilePictureIndexNo;
 @end
 
 @implementation HomeViewController
 
-@synthesize menuBtn,chatBtn,peopleImageView,serviceConnector,dataListForHomeView;
+@synthesize menuBtn,chatBtn,peopleImageView,serviceConnector,dataListForHomeView,prefs;
 @synthesize firstNameLabel,lastNameLabel,industryLabel,companyLabel,positionLabel;
+@synthesize idKey,profilePictureIndexNo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //init instance vars
+    prefs = [NSUserDefaults standardUserDefaults];
     dataListForHomeView = [[NSArray alloc] init];
+    profilePictureIndexNo = arc4random_uniform([dataListForHomeView count]);
+    
+    //service delegation for receiving data from DB
+    serviceConnector = [[ServiceConnector alloc] init];
+    serviceConnector.delegate = self;
+    [serviceConnector retrieveDataFromDB];
     
 	self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
@@ -58,9 +69,49 @@
     [chatBtn addTarget:self action:@selector(revealChat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.chatBtn];
     
-    //Image in action
-    UIImage *image = [UIImage imageNamed:@"squirl.png"];
-    [self.peopleImageView setImage:image];
+    
+}
+
+#pragma delegate call service connector
+-(void)requestReturnedData:(NSData *)data
+{
+    NSError *error;
+    dataListForHomeView = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error]];
+    NSLog(@"%@", dataListForHomeView);
+    
+    [self setupProfilePictureImage];
+    [self setupHomeViewUIDetails];
+    [self setupGesturesForProfileImage];
+    
+}
+
+-(void)setupHomeViewUIDetails
+{
+    for (int i = 0; i < [dataListForHomeView count]; i++) {
+        if (idKey == [[dataListForHomeView objectAtIndex:i] objectForKey:@"id"]) {
+            NSArray * tempCompanyList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"company"] componentsSeparatedByString:@","];
+            
+            firstNameLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"first_name"];
+            lastNameLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"last_name"];
+            industryLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"industry"];
+            positionLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"position"];
+            companyLabel.text = [tempCompanyList objectAtIndex:LATEST_COMPANY_NAME];
+        }
+    }
+    
+}
+
+
+- (void)setupProfilePictureImage
+{
+    [self.peopleImageView setImageWithURL:[NSURL URLWithString:[[dataListForHomeView objectAtIndex:profilePictureIndexNo] objectForKey:@"picture_url"]]
+                         placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    idKey = [[dataListForHomeView objectAtIndex:profilePictureIndexNo] objectForKey:@"id"];
+    
+}
+
+-(void)setupGesturesForProfileImage
+{
     [peopleImageView setUserInteractionEnabled:YES];
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
@@ -69,26 +120,38 @@
     
     [peopleImageView addGestureRecognizer:swipeLeft];
     [peopleImageView addGestureRecognizer:swipeRight];
-    
-    
-    //test data received or not
-    serviceConnector = [[ServiceConnector alloc] init];
-    serviceConnector.delegate = self;
-    [serviceConnector retrieveDataFromDB];
 }
 
 - (void)handleSwipe:(UISwipeGestureRecognizer *)swipe{
     if (swipe.direction==UISwipeGestureRecognizerDirectionLeft) {
-        UIImage *image = [UIImage imageNamed:@"amazonUFO.png"];
-        [peopleImageView setImage:image];
+        profilePictureIndexNo--;
+        if(profilePictureIndexNo <0){
+            profilePictureIndexNo = [dataListForHomeView count];
+            [self setNewUserProfileAfterSwipe];
+        }
+        else{
+            [self setNewUserProfileAfterSwipe];
+        }
     }
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        UIImage *image = [UIImage imageNamed:@"squirl.png"];
-        [peopleImageView setImage:image];
+        profilePictureIndexNo++;
+        if(profilePictureIndexNo >= [dataListForHomeView count]){
+            profilePictureIndexNo = 0;
+            [self setNewUserProfileAfterSwipe];
+        }
+        else{
+            [self setNewUserProfileAfterSwipe];
+        }
     }
 }
 
+-(void)setNewUserProfileAfterSwipe
+{
+    idKey = [[dataListForHomeView objectAtIndex:profilePictureIndexNo] objectForKey:@"id"];
+    [self setupProfilePictureImage];
+    [self setupHomeViewUIDetails];
+}
 
 -(IBAction)revealMenu:(id)sender
 {
@@ -107,22 +170,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)testprefs:(id)sender {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSLog(@"new win: %@", [prefs objectForKey:@"name"]);
+
+
+
+- (IBAction)getOtherUserProfile:(id)sender {
+    [self performSegueWithIdentifier:@"pplProfileSegue" sender:sender];
 }
 
--(void)requestReturnedData:(NSData *)data
-{
-    
-    NSError *error;
-    dataListForHomeView = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error]];
-    NSLog(@"%@", dataListForHomeView);
-    firstNameLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"first_name"];
-    lastNameLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"last_name"];
-    industryLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"industry"];
-    positionLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"position"];
-    companyLabel.text = [[dataListForHomeView objectAtIndex:0] objectForKey:@"company"];
-}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    PeopleProfileViewController * ppv = [segue destinationViewController];
+//    if (self.companyHistoryDisplaySwitcher.on) {
+//        pdv.companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
+//    }
+//    if (self.educationHistoryDisplaySwitcher.on) {
+//        pdv.educationList = [[prefs objectForKey:@"masterList"] objectAtIndex:0];
+//    }
+//    if (self.skillsDisplaySwitcher.on) {
+//        pdv.skillList = [[prefs objectForKey:@"masterList"] objectAtIndex:2];
+//    }
+//    if (self.industryDisplaySwitcher.on) {
+//        pdv.industry = [prefs stringForKey:@"industry"];
+//    }
+//    if (self.summaryDisplaySwitcher.on) {
+//        pdv.summary = [prefs stringForKey:@"summary"];
+//    }
+}
 @end

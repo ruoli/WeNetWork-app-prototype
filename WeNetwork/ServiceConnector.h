@@ -20,7 +20,7 @@
 @property (strong,nonatomic) id <ServiceConnectorDelegate> delegate;
 
 -(void)getTest;
--(void)postTest;
+-(void)postProfileData;
 -(void)retrieveDataFromDB;
 
 @end

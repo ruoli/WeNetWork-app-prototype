@@ -12,6 +12,7 @@
 #import "ChatSliderViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SelfProfileDetailsViewController.h"
+#import "ServiceConnector.h"
 @interface SelfProfileViewController : UIViewController
 
 @property (strong,nonatomic)NSUserDefaults *prefs;
