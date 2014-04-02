@@ -21,6 +21,7 @@
 
 -(void)getTest;
 -(void)postProfileData;
+-(void)postDataControllerSigns:(NSMutableDictionary *)dictionary;
 -(void)retrieveDataFromDB;
 
 @end

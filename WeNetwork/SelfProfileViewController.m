@@ -94,23 +94,65 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *companyHistoryShouldDisplay;
+    NSString *educationHistoryShouldDisplay;
+    NSString *skillsShouldDisplay;
+    NSString *summaryShouldDisplay;
+    NSString *industryShouldDisplay;
+    
+    NSMutableDictionary *switcherDictionary = [[NSMutableDictionary alloc] init];
+    
+    
     SelfProfileDetailsViewController * pdv = [segue destinationViewController];
     if (self.companyHistoryDisplaySwitcher.on) {
         pdv.companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
+        companyHistoryShouldDisplay = @"Y";
+        [switcherDictionary setValue:companyHistoryShouldDisplay forKey:@"company_display"];
     }
+    else{
+        companyHistoryShouldDisplay = @"N";
+        [switcherDictionary setValue:companyHistoryShouldDisplay forKey:@"company_display"];
+    }
+    
     if (self.educationHistoryDisplaySwitcher.on) {
         pdv.educationList = [[prefs objectForKey:@"masterList"] objectAtIndex:0];
+        educationHistoryShouldDisplay = @"Y";
+        [switcherDictionary setValue:educationHistoryShouldDisplay forKey:@"education_display"];
     }
+    else{
+        educationHistoryShouldDisplay = @"N";
+        [switcherDictionary setValue:educationHistoryShouldDisplay forKey:@"education_display"];
+    }
+    
     if (self.skillsDisplaySwitcher.on) {
         pdv.skillList = [[prefs objectForKey:@"masterList"] objectAtIndex:2];
+        skillsShouldDisplay = @"Y";
+        [switcherDictionary setValue:skillsShouldDisplay forKey:@"skill_display"];
     }
+    else{
+        skillsShouldDisplay = @"N";
+        [switcherDictionary setValue:skillsShouldDisplay forKey:@"skill_display"];
+    }
+    
     if (self.industryDisplaySwitcher.on) {
         pdv.industry = [prefs stringForKey:@"industry"];
+        industryShouldDisplay = @"Y";
+        [switcherDictionary setValue:industryShouldDisplay forKey:@"industry_display"];
     }
+    else{
+        industryShouldDisplay = @"N";
+        [switcherDictionary setValue:industryShouldDisplay forKey:@"industry_display"];
+    }
+    
     if (self.summaryDisplaySwitcher.on) {
         pdv.summary = [prefs stringForKey:@"summary"];
+        summaryShouldDisplay = @"Y";
+        [switcherDictionary setValue:summaryShouldDisplay forKey:@"summary_display"];
+    }else{
+        summaryShouldDisplay = @"N";
+        [switcherDictionary setValue:industryShouldDisplay forKey:@"summary_display"];
     }
     
-    
+    [serviceConnector postDataControllerSigns:switcherDictionary];
 }
 @end

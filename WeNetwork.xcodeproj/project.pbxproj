@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180B484F18ECB8A6008DCF1B /* NSString+ConvertToArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 180B484E18ECB8A6008DCF1B /* NSString+ConvertToArray.m */; };
 		181ABFD518C91FC300BA6F04 /* squirl.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD418C91FC300BA6F04 /* squirl.png */; };
 		181ABFD718C925C500BA6F04 /* amazonUFO.png in Resources */ = {isa = PBXBuildFile; fileRef = 181ABFD618C925C500BA6F04 /* amazonUFO.png */; };
 		181ABFDA18C93A1000BA6F04 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181ABFD918C93A1000BA6F04 /* ChatViewController.m */; };
+		18B2738B18EB4E33007A2225 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B2738A18EB4E33007A2225 /* HomeViewController.m */; };
 		18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095118C7D05500CAD97C /* MessagesViewController.m */; };
 		18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095418C7D06300CAD97C /* SettingsViewController.m */; };
 		18DB095818C7D06F00CAD97C /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DB095718C7D06F00CAD97C /* InviteViewController.m */; };
@@ -33,11 +35,9 @@
 		18DDF06218C6A69200330998 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06018C6A69200330998 /* UIImage+ImageWithUIView.m */; };
 		18DDF06518C6A6B500330998 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06418C6A6B500330998 /* InitViewController.m */; };
 		18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06718C6A6E500330998 /* MenuViewController.m */; };
-		18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF06D18C6A73C00330998 /* HomeViewController.m */; };
 		18DDF07118C6A7D800330998 /* SelfProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDF07018C6A7D800330998 /* SelfProfileViewController.m */; };
 		6B641BCA8F20463CBF610DF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9970A6F1592642C3A229BCCE /* libPods.a */; };
 		DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */; };
-		DA438E6318D7582100E1A16E /* PeopleProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA438E6218D7582100E1A16E /* PeopleProfileViewController.m */; };
 		DA84749B18DB381D00B006C8 /* ServiceConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = DA84749A18DB381D00B006C8 /* ServiceConnector.m */; };
 		DACD417C18D08140005B3747 /* LinkedinDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD417B18D08140005B3747 /* LinkedinDataFetcher.m */; };
 		DACD418218D0BD32005B3747 /* SelfProfileDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DACD418118D0BD32005B3747 /* SelfProfileDetailsViewController.m */; };
@@ -57,10 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180B484D18ECB8A6008DCF1B /* NSString+ConvertToArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ConvertToArray.h"; sourceTree = "<group>"; };
+		180B484E18ECB8A6008DCF1B /* NSString+ConvertToArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ConvertToArray.m"; sourceTree = "<group>"; };
 		181ABFD418C91FC300BA6F04 /* squirl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squirl.png; sourceTree = "<group>"; };
 		181ABFD618C925C500BA6F04 /* amazonUFO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazonUFO.png; sourceTree = "<group>"; };
 		181ABFD818C93A1000BA6F04 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		181ABFD918C93A1000BA6F04 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		18B2738A18EB4E33007A2225 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18DB095018C7D05500CAD97C /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		18DB095118C7D05500CAD97C /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		18DB095318C7D06300CAD97C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -97,15 +100,12 @@
 		18DDF06618C6A6E500330998 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		18DDF06718C6A6E500330998 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		18DDF06C18C6A73C00330998 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		18DDF06D18C6A73C00330998 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18DDF06F18C6A7D800330998 /* SelfProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfProfileViewController.h; sourceTree = "<group>"; };
 		18DDF07018C6A7D800330998 /* SelfProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfProfileViewController.m; sourceTree = "<group>"; };
 		9970A6F1592642C3A229BCCE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CBF36AD8A147E7946463E3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		DA200D0E18CA21D70005F5C4 /* AppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHomeViewController.h; sourceTree = "<group>"; };
 		DA200D0F18CA21D70005F5C4 /* AppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHomeViewController.m; sourceTree = "<group>"; };
-		DA438E6118D7582100E1A16E /* PeopleProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleProfileViewController.h; sourceTree = "<group>"; };
-		DA438E6218D7582100E1A16E /* PeopleProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleProfileViewController.m; sourceTree = "<group>"; };
 		DA84749918DB381D00B006C8 /* ServiceConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConnector.h; sourceTree = "<group>"; };
 		DA84749A18DB381D00B006C8 /* ServiceConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceConnector.m; sourceTree = "<group>"; };
 		DA84749C18DB386500B006C8 /* JSONDictionaryExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONDictionaryExtensions.h; sourceTree = "<group>"; };
@@ -145,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180B485018ECBA3F008DCF1B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				180B484D18ECB8A6008DCF1B /* NSString+ConvertToArray.h */,
+				180B484E18ECB8A6008DCF1B /* NSString+ConvertToArray.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		181ABFD318C91FA700BA6F04 /* AppImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				18DDF06C18C6A73C00330998 /* HomeViewController.h */,
-				18DDF06D18C6A73C00330998 /* HomeViewController.m */,
+				18B2738A18EB4E33007A2225 /* HomeViewController.m */,
 				18DB095018C7D05500CAD97C /* MessagesViewController.h */,
 				18DB095118C7D05500CAD97C /* MessagesViewController.m */,
 				18DB095318C7D06300CAD97C /* SettingsViewController.h */,
@@ -223,15 +232,16 @@
 			isa = PBXGroup;
 			children = (
 				DA84749818DB37E800B006C8 /* DataBaseController */,
+				180B485018ECBA3F008DCF1B /* Utilities */,
 				DA438E6018D7539F00E1A16E /* SegueDesintaionViewController */,
 				DA200D0D18CA19160005F5C4 /* LinkedinController */,
 				18DB095C18C7D90600CAD97C /* Sliders */,
 				18DB094F18C7CD7100CAD97C /* AppDetailsViewControllers */,
 				18DDF05C18C6A69200330998 /* ECSlidingViewController */,
+				18DDF00E18C66BD300330998 /* Supporting Files */,
 				18DDF01918C66BD300330998 /* Main.storyboard */,
 				18DDF06318C6A6B500330998 /* InitViewController.h */,
 				18DDF06418C6A6B500330998 /* InitViewController.m */,
-				18DDF00E18C66BD300330998 /* Supporting Files */,
 			);
 			path = WeNetwork;
 			sourceTree = "<group>";
@@ -298,8 +308,6 @@
 				181ABFD918C93A1000BA6F04 /* ChatViewController.m */,
 				DACD418018D0BD32005B3747 /* SelfProfileDetailsViewController.h */,
 				DACD418118D0BD32005B3747 /* SelfProfileDetailsViewController.m */,
-				DA438E6118D7582100E1A16E /* PeopleProfileViewController.h */,
-				DA438E6218D7582100E1A16E /* PeopleProfileViewController.m */,
 			);
 			name = SegueDesintaionViewController;
 			sourceTree = "<group>";
@@ -459,16 +467,16 @@
 				18DDF06818C6A6E500330998 /* MenuViewController.m in Sources */,
 				18DB095218C7D05500CAD97C /* MessagesViewController.m in Sources */,
 				18DDF01818C66BD300330998 /* AppDelegate.m in Sources */,
+				180B484F18ECB8A6008DCF1B /* NSString+ConvertToArray.m in Sources */,
+				18B2738B18EB4E33007A2225 /* HomeViewController.m in Sources */,
 				18DDF07118C6A7D800330998 /* SelfProfileViewController.m in Sources */,
 				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
 				18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */,
-				18DDF06E18C6A73C00330998 /* HomeViewController.m in Sources */,
 				18DB095518C7D06300CAD97C /* SettingsViewController.m in Sources */,
 				18DDF01418C66BD300330998 /* main.m in Sources */,
 				18DDF06118C6A69200330998 /* ECSlidingViewController.m in Sources */,
 				DA200D1018CA21D70005F5C4 /* AppHomeViewController.m in Sources */,
 				DACD418218D0BD32005B3747 /* SelfProfileDetailsViewController.m in Sources */,
-				DA438E6318D7582100E1A16E /* PeopleProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

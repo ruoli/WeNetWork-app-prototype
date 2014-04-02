@@ -13,7 +13,7 @@
 @end
 
 @implementation SelfProfileDetailsViewController
-@synthesize industry,summary,textView,companyList,educationList,skillList;
+@synthesize industry,summary,textView,companyList,educationList,skillList,publicCompanyList,publicPositionTitleList,publicEducationList,publicSkillList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +42,12 @@
         }
         textView.text = [textView.text stringByAppendingString:@"\n\n"];
     }
+    if (publicPositionTitleList != NULL && publicCompanyList != NULL) {
+        for (int i = 0; i < [publicCompanyList count]; i++) {
+            textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%d.\nCompany:  %@\nJob Title:    %@\n",i+1, [publicCompanyList objectAtIndex:i], [publicPositionTitleList objectAtIndex:i]]];
+        }
+        textView.text = [textView.text stringByAppendingString:@"\n\n"];
+    }
     if (educationList != NULL) {
         textView.text = [textView.text stringByAppendingString:@"Education History:\n"];
         for (int i=0; i<[educationList count]; i++) {
@@ -57,6 +63,12 @@
         for (int i = 0; i<[skillList count]; i++) {
             NSString *skillName = [[[skillList objectAtIndex:i] objectForKey:@"skill"] objectForKey:@"name"];
             textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%@   ",skillName]];
+        }
+        textView.text = [textView.text stringByAppendingString:@"\n\n\n"];
+    }
+    if (publicSkillList != NULL) {
+        for (int i = 0; i<[publicSkillList count]; i++) {
+            textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%@   ", [publicSkillList objectAtIndex:i]]];
         }
         textView.text = [textView.text stringByAppendingString:@"\n\n\n"];
     }

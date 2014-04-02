@@ -18,6 +18,11 @@
 @property (strong,nonatomic)NSString * industry;
 @property (strong,nonatomic)NSString * summary;
 
+@property (strong,nonatomic)NSArray * publicCompanyList;
+@property (strong,nonatomic)NSArray * publicPositionTitleList;
+@property (strong,nonatomic)NSArray * publicSkillList;
+@property (strong,nonatomic)NSArray * publicEducationList;
+
 @property (strong,nonatomic)NSArray * companyList;
 @property (strong,nonatomic)NSArray * educationList;
 @property (strong,nonatomic)NSArray * skillList;

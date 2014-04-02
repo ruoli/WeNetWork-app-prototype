@@ -90,11 +90,12 @@
     for (int i = 0; i < [dataListForHomeView count]; i++) {
         if (idKey == [[dataListForHomeView objectAtIndex:i] objectForKey:@"id"]) {
             NSArray * tempCompanyList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"company"] componentsSeparatedByString:@","];
+            NSArray * tempTitleList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"position"] componentsSeparatedByString:@","];
             
             firstNameLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"first_name"];
             lastNameLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"last_name"];
             industryLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"industry"];
-            positionLabel.text = [[dataListForHomeView objectAtIndex:i] objectForKey:@"position"];
+            positionLabel.text = [tempTitleList objectAtIndex:LATEST_COMPANY_NAME];
             companyLabel.text = [tempCompanyList objectAtIndex:LATEST_COMPANY_NAME];
         }
     }
@@ -126,7 +127,7 @@
     if (swipe.direction==UISwipeGestureRecognizerDirectionLeft) {
         profilePictureIndexNo--;
         if(profilePictureIndexNo <0){
-            profilePictureIndexNo = [dataListForHomeView count];
+            profilePictureIndexNo = [dataListForHomeView count] -1;
             [self setNewUserProfileAfterSwipe];
         }
         else{
@@ -173,27 +174,19 @@
 
 
 
-- (IBAction)getOtherUserProfile:(id)sender {
-    [self performSegueWithIdentifier:@"pplProfileSegue" sender:sender];
-}
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    PeopleProfileViewController * ppv = [segue destinationViewController];
-//    if (self.companyHistoryDisplaySwitcher.on) {
-//        pdv.companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
-//    }
-//    if (self.educationHistoryDisplaySwitcher.on) {
-//        pdv.educationList = [[prefs objectForKey:@"masterList"] objectAtIndex:0];
-//    }
-//    if (self.skillsDisplaySwitcher.on) {
-//        pdv.skillList = [[prefs objectForKey:@"masterList"] objectAtIndex:2];
-//    }
-//    if (self.industryDisplaySwitcher.on) {
-//        pdv.industry = [prefs stringForKey:@"industry"];
-//    }
-//    if (self.summaryDisplaySwitcher.on) {
-//        pdv.summary = [prefs stringForKey:@"summary"];
-//    }
+    SelfProfileDetailsViewController * pdv = [segue destinationViewController];
+    
+    for (int i = 0; i < [dataListForHomeView count]; i++) {
+        if (idKey == [[dataListForHomeView objectAtIndex:i] objectForKey:@"id"]) {
+            
+            pdv.publicCompanyList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"company"] convertToArray];
+            pdv.publicPositionTitleList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"position"] convertToArray];
+            pdv.publicSkillList = [[[dataListForHomeView objectAtIndex:i] objectForKey:@"skills"] convertToArray];
+            pdv.industry = [[dataListForHomeView objectAtIndex:i] objectForKey:@"industry"];
+            pdv.summary = [[dataListForHomeView objectAtIndex:i] objectForKey:@"summary"];
+        }
+    }
+    
 }
 @end

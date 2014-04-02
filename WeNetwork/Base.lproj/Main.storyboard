@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ObS-Mw-VMg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ObS-Mw-VMg">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--App Home View Controller-->
@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uS6-ww-jvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142" y="1428"/>
+            <point key="canvasLocation" x="-160" y="1736"/>
         </scene>
         <!--Self Profile View Controller-->
         <scene sceneID="bWi-jG-QbN">
@@ -449,9 +449,6 @@
                                 <state key="normal" title="V">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="testprefs:" destination="ERy-pH-8Ky" eventType="touchUpInside" id="7G2-Tr-4vS"/>
-                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4f-vF-FGI">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -528,8 +525,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getOtherUserProfile:" destination="ERy-pH-8Ky" eventType="touchUpInside" id="Zvl-Ol-Vz3"/>
-                                    <segue destination="i2C-9a-Iu8" kind="modal" identifier="pplProfileSegue" modalTransitionStyle="crossDissolve" id="qcH-Wj-Rtk"/>
+                                    <segue destination="dRb-wE-tMV" kind="modal" identifier="pplProfileSegue" modalTransitionStyle="crossDissolve" id="DVX-2D-0GX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -547,39 +543,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nF4-ab-9NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="368" y="2116"/>
-        </scene>
-        <!--People Profile View Controller-->
-        <scene sceneID="dij-J8-uGc">
-            <objects>
-                <viewController id="i2C-9a-Iu8" customClass="PeopleProfileViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aOo-qZ-vei"/>
-                        <viewControllerLayoutGuide type="bottom" id="LSG-IE-yUc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J1b-qK-axF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-9V-UuH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="Zzc-p0-JJm">
-                                        <barButtonItem key="leftBarButtonItem" title="BK" id="f8M-Gt-gRN">
-                                            <connections>
-                                                <action selector="back:" destination="i2C-9a-Iu8" id="Oej-Iy-b4l"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hs9-wH-WL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="368" y="2882"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="A6H-Ol-EjI">
@@ -654,4 +617,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="DVX-2D-0GX"/>
+    </inferredMetricsTieBreakers>
 </document>

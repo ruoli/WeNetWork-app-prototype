@@ -80,8 +80,6 @@
         }        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"failed to fetch current user %@", error);
     }];
-    
-    
 }
 
 - (LIALinkedInHttpClient *)client {

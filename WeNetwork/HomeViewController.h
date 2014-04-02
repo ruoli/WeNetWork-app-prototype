@@ -12,14 +12,14 @@
 #import "ChatSliderViewController.h"
 #import "ServiceConnector.h"
 #import "JSONDictionaryExtensions.h"
-#import "PeopleProfileViewController.h"
+#import "SelfProfileDetailsViewController.h"
+#import "NSString+ConvertToArray.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeViewController : UIViewController <ServiceConnectorDelegate>
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *peopleImageView;
-- (IBAction)getOtherUserProfile:(id)sender;
 
 
 @property (strong,nonatomic)ServiceConnector *serviceConnector;
