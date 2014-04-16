@@ -7,7 +7,7 @@
 //
 
 #import "SelfProfileViewController.h"
-
+#define POST_SIGN_CONTROLLER_WS @"http://localhost:8888/control_what_to_display.php"
 @interface SelfProfileViewController ()
 @property(strong,nonatomic)ServiceConnector *serviceConnector;
 @end
@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     prefs = [NSUserDefaults standardUserDefaults];
     
 	self.view.layer.shadowOpacity = 0.75f;
@@ -101,7 +100,7 @@
     NSString *industryShouldDisplay;
     
     NSMutableDictionary *switcherDictionary = [[NSMutableDictionary alloc] init];
-    
+    serviceConnector = [[ServiceConnector alloc] init];
     
     SelfProfileDetailsViewController * pdv = [segue destinationViewController];
     if (self.companyHistoryDisplaySwitcher.on) {
@@ -153,6 +152,7 @@
         [switcherDictionary setValue:industryShouldDisplay forKey:@"summary_display"];
     }
     
-    [serviceConnector postDataControllerSigns:switcherDictionary];
+    [switcherDictionary setValue:[prefs objectForKey:@"emailAddress"] forKey:@"id"];
+    [serviceConnector postDataToWebService:switcherDictionary webServiceURL:POST_SIGN_CONTROLLER_WS];
 }
 @end

@@ -7,14 +7,20 @@
 //
 
 #import "SettingsViewController.h"
+#define POST_REGION_AND_ID_TO_WS @"http://localhost:8888/post_basic_profile.php"
+
 
 @interface SettingsViewController ()
-
+@property(strong,nonatomic)NSString *selectedCountry;
+@property(strong,nonatomic)NSMutableArray *selectedCountriesList;
 @end
 
 @implementation SettingsViewController
 @synthesize menuBtn;
 @synthesize chatBtn;
+@synthesize textField;
+@synthesize selectedCountry;
+@synthesize selectedCountriesList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    textField.text = @"";
+    selectedCountriesList = [[NSMutableArray alloc] init];
 	self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -106,4 +114,36 @@
 {
     return 1;
 }
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (component == 0 && [selectedCountriesList count] < 3) {
+        selectedCountry = [self.listOfCountries objectAtIndex:row];
+//        if (selectedCountry != NULL) {
+//            [selectedCountriesList addObject:selectedCountry];
+//        }
+    }
+    
+}
+
+- (IBAction)confirmAddCountryAction:(id)sender {
+//    NSString *tempString;
+//    if (selectedCountry !=NULL && ![selectedCountry isEqual: @""]) {
+//        [selectedCountriesList addObject:selectedCountry];
+//        for (int i = 0; i < [selectedCountriesList count]; i++) {
+//            
+//            tempString = [textField.text stringByAppendingString:[NSString stringWithFormat:@"%@,",[selectedCountriesList objectAtIndex:i]]];
+//            textField.text = [tempString substringToIndex:[tempString length]-1];
+//        }
+//        [selectedCountriesList removeAllObjects];
+//    }
+    textField.text = selectedCountry;
+    ServiceConnector *serviceConnector = [[ServiceConnector alloc] init];
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *regionDictionary = [[NSMutableDictionary alloc] init];
+    [regionDictionary setValue:[prefs objectForKey:@"emailAddress"] forKey:@"id"];
+    [regionDictionary setValue:selectedCountry forKey:@"region"];
+    [serviceConnector postDataToWebService:regionDictionary webServiceURL:POST_REGION_AND_ID_TO_WS];
+}
+
 @end

@@ -8,7 +8,8 @@
 
 #import "ServiceConnector.h"
 #import "JSONDictionaryExtensions.h"
-
+#define POST_TO_BASIC_PROFILE_WS @"http://localhost:8888/post_basic_profile.php"
+#define RETRIEVE_DATA_FROM_WS @"http://localhost:8888/retrieve_others_profile.php"
 @implementation ServiceConnector{
     NSData *receivedData;;
 }
@@ -23,23 +24,10 @@
 }
 
 
--(void)getTest{
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/testgetpost.php"]];
-    
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"getValues" forHTTPHeaderField:@"METHOD"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if(!connection){
-        NSLog(@"Connection Failed");
-    }
-    
-}
 
 -(void)postProfileData{
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/index.php"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:POST_TO_BASIC_PROFILE_WS]];
     
     [request setHTTPMethod:@"POST"];
     [request addValue:@"postValues" forHTTPHeaderField:@"METHOD"];
@@ -50,9 +38,11 @@
     [dictionary setValue:[prefs objectForKey:@"lastName"] forKey:@"last_name"];
     [dictionary setValue:[prefs objectForKey:@"industry"] forKey:@"industry"];
     [dictionary setValue:[prefs objectForKey:@"pictureUrl"] forKey:@"picture_url"];
-    [dictionary setValue:self.getPositionTitleList forKey:@"position"];
-    [dictionary setValue:self.getCompanyHistoryList forKey:@"company"];
-    [dictionary setValue:self.getSkillSetList forKey:@"skills"];
+    [dictionary setValue:[self getItemNamesList:@"title"] forKey:@"position"];
+    [dictionary setValue:[self getItemNamesList:@"company"] forKey:@"company"];
+    [dictionary setValue:[self getItemNamesList:@"skill"] forKey:@"skills"];
+    [dictionary setValue:[self getItemNamesList:@"schoolName"] forKey:@"school_name"];
+    [dictionary setValue:[self getItemNamesList:@"fieldOfStudy"] forKey:@"field_of_study"];
     [dictionary setValue:[prefs objectForKey:@"summary"] forKey:@"summary"];
     
     NSData *data = [[dictionary copy] JSONValue];
@@ -67,9 +57,10 @@
     
 }
 
--(void)postDataControllerSigns:(NSMutableDictionary *)dictionary
+-(void)postDataToWebService:(NSMutableDictionary *)dictionary
+              webServiceURL:(NSString *)wsURL
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/postControllers.php"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:wsURL]];
     
     [request setHTTPMethod:@"POST"];
     [request addValue:@"postValues" forHTTPHeaderField:@"METHOD"];
@@ -87,7 +78,7 @@
 
 -(void)retrieveDataFromDB
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/testgetpost.php"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:RETRIEVE_DATA_FROM_WS]];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if(!connection){
         NSLog(@"Connection Failed");
@@ -95,42 +86,20 @@
 }
 
 
--(NSString *)getCompanyHistoryList
+
+-(NSString *)getItemNamesList:(NSString *)itemName
 {
-    NSString * companies = @"";
-    NSArray * companyList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
-    for (int i=0; i<[companyList count]; i++) {
-        NSString *companyName = [[[companyList objectAtIndex:i] objectForKey:@"company"] objectForKey:@"name"];
+    NSString * item = @"";
+    NSArray * itemNameList = [[prefs objectForKey:@"masterList"] objectAtIndex:0];
+    for (int i=0; i<[itemNameList count]; i++) {
+        NSString *itemNames = [[itemNameList objectAtIndex:i] objectForKey:itemName];
         
-        companies = [companies stringByAppendingString:[NSString stringWithFormat:@"%@,", companyName]];
+        item = [item stringByAppendingString:[NSString stringWithFormat:@"%@,", itemNames]];
     }
-    return [companies substringToIndex:[companies length]-1];
+    return [item substringToIndex:[item length]-1];
 }
 
 
--(NSString *)getPositionTitleList
-{
-    NSString * titles = @"";
-    NSArray * titlesList = [[prefs objectForKey:@"masterList"] objectAtIndex:1];
-    for (int i = 0; i<[titlesList count]; i++) {
-        NSString *titlesName = [[titlesList objectAtIndex:i] objectForKey:@"title"];
-        
-        titles = [titles stringByAppendingString:[NSString stringWithFormat:@"%@,", titlesName]];
-    }
-    return [titles substringToIndex:[titles length]-1];
-}
-
--(NSString *)getSkillSetList
-{
-    NSString * skills = @"";
-    NSArray * skillsList = [[prefs objectForKey:@"masterList"] objectAtIndex:2];
-    for (int i = 0; i<[skillsList count]; i++) {
-        NSString *skillsName = [[[skillsList objectAtIndex:i] objectForKey:@"skill"] objectForKey:@"name"];
-        
-        skills = [skills stringByAppendingString:[NSString stringWithFormat:@"%@,", skillsName]];
-    }
-    return [skills substringToIndex:[skills length]-1];
-}
 
 
 #pragma mark - Data connection delegate -
@@ -142,7 +111,7 @@
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     
-    NSLog(@"Connection failed with error: %@",error.localizedDescription);
+//    NSLog(@"Connection failed with error: %@",error.localizedDescription);
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge{

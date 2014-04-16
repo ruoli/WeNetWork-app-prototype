@@ -13,7 +13,9 @@
 @end
 
 @implementation SelfProfileDetailsViewController
-@synthesize industry,summary,textView,companyList,educationList,skillList,publicCompanyList,publicPositionTitleList,publicEducationList,publicSkillList;
+@synthesize industry,summary,textView,companyList,educationList,skillList,publicCompanyList,publicPositionTitleList,publicSkillList;
+@synthesize publicSchoolNames;
+@synthesize publicFieldOfStudy;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +45,7 @@
         textView.text = [textView.text stringByAppendingString:@"\n\n"];
     }
     if (publicPositionTitleList != NULL && publicCompanyList != NULL) {
+        textView.text = [textView.text stringByAppendingString:@"Career History:\n"];
         for (int i = 0; i < [publicCompanyList count]; i++) {
             textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%d.\nCompany:  %@\nJob Title:    %@\n",i+1, [publicCompanyList objectAtIndex:i], [publicPositionTitleList objectAtIndex:i]]];
         }
@@ -58,6 +61,17 @@
         }
         textView.text = [textView.text stringByAppendingString:@"\n\n"];
     }
+    if (publicSchoolNames != NULL && publicFieldOfStudy != NULL) {
+        textView.text = [textView.text stringByAppendingString:@"Education History:\n"];
+        for (int i=0; i<[publicSchoolNames count]; i++) {
+            NSString *schoolName = [publicSchoolNames objectAtIndex:i];
+            NSString *fieldOfStudy = [publicFieldOfStudy objectAtIndex:i];
+            
+            textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%d.\nSchool Name:  %@\nField Of Study: %@\n",i+1, schoolName, fieldOfStudy]];
+        }
+        textView.text = [textView.text stringByAppendingString:@"\n\n"];
+
+    }
     if (skillList != NULL) {
         textView.text = [textView.text stringByAppendingString:@"Skills:\n"];
         for (int i = 0; i<[skillList count]; i++) {
@@ -67,6 +81,7 @@
         textView.text = [textView.text stringByAppendingString:@"\n\n\n"];
     }
     if (publicSkillList != NULL) {
+        textView.text = [textView.text stringByAppendingString:@"Skills:\n"];
         for (int i = 0; i<[publicSkillList count]; i++) {
             textView.text = [textView.text stringByAppendingString:[NSString stringWithFormat:@"%@   ", [publicSkillList objectAtIndex:i]]];
         }

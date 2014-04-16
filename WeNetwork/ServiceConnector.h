@@ -19,9 +19,9 @@
 @property (strong,nonatomic)NSUserDefaults *prefs;
 @property (strong,nonatomic) id <ServiceConnectorDelegate> delegate;
 
--(void)getTest;
--(void)postProfileData;
--(void)postDataControllerSigns:(NSMutableDictionary *)dictionary;
--(void)retrieveDataFromDB;
 
+-(void)postProfileData;
+-(void)postDataToWebService:(NSMutableDictionary *)dictionary
+              webServiceURL:(NSString *)wsURL;
+-(void)retrieveDataFromDB;
 @end

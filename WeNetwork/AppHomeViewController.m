@@ -53,12 +53,12 @@
                 NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
                 [self requestMeWithToken:accessToken];
             }                   failure:^(NSError *error) {
-                NSLog(@"Quering accessToken failed %@", error);
+//                NSLog(@"Quering accessToken failed %@", error);
             }];
         }                      cancel:^{
-            NSLog(@"Authorization was cancelled by user");
+//            NSLog(@"Authorization was cancelled by user");
         }                     failure:^(NSError *error) {
-            NSLog(@"Authorization failed %@", error);
+//            NSLog(@"Authorization failed %@", error);
         }];
     }
 }
@@ -76,9 +76,9 @@
                 [self.indicator stopAnimating];
                 self.indicator.hidden = YES;
             }
-            NSLog(@"current user %@", self.results);
+//            NSLog(@"current user %@", self.results);
         }        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"failed to fetch current user %@", error);
+//            NSLog(@"failed to fetch current user %@", error);
     }];
 }
 
@@ -103,9 +103,6 @@
     serviceConnector = [[ServiceConnector alloc] init];
     [serviceConnector postProfileData];
 }
-
-
-
 
 @end
 

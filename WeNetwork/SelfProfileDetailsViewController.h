@@ -21,7 +21,9 @@
 @property (strong,nonatomic)NSArray * publicCompanyList;
 @property (strong,nonatomic)NSArray * publicPositionTitleList;
 @property (strong,nonatomic)NSArray * publicSkillList;
-@property (strong,nonatomic)NSArray * publicEducationList;
+@property (strong,nonatomic)NSArray * publicSchoolNames;
+@property (strong,nonatomic)NSArray * publicFieldOfStudy;
+
 
 @property (strong,nonatomic)NSArray * companyList;
 @property (strong,nonatomic)NSArray * educationList;

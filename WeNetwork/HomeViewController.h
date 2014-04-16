@@ -14,6 +14,7 @@
 #import "JSONDictionaryExtensions.h"
 #import "SelfProfileDetailsViewController.h"
 #import "NSString+ConvertToArray.h"
+#import "PostRequestAdaptor.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeViewController : UIViewController <ServiceConnectorDelegate>
