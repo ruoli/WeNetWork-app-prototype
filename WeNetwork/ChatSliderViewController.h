@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
-@interface ChatSliderViewController : UITableViewController
+#import "ServiceConnector.h"
+#import "MessagesViewController.h"
+@interface ChatSliderViewController : UITableViewController <ServiceConnectorDelegate>
 
 
 @end

@@ -112,10 +112,11 @@
     NSError *error;
     dataListForHomeView = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error]];
     NSLog(@"%@", dataListForHomeView);
-    
-    [self setupProfilePictureImage];
-    [self setupHomeViewUIDetails];
-    [self setupGesturesForProfileImage];
+    if(dataListForHomeView != NULL && [dataListForHomeView count] != 0){
+        [self setupProfilePictureImage];
+        [self setupHomeViewUIDetails];
+        [self setupGesturesForProfileImage];
+    }
     
 }
 

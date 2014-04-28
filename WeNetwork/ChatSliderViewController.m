@@ -7,12 +7,17 @@
 //
 
 #import "ChatSliderViewController.h"
-
+#define POST_CONNECTED_USERS @"http://localhost:8888/retrieve_already_connected_users.php"
 @interface ChatSliderViewController ()
 @property (nonatomic,strong)NSArray * chatPeople;
+@property(strong,nonatomic)ServiceConnector * serviceConnector;
+@property(strong,nonatomic)NSUserDefaults *prefs;
 @end
 
 @implementation ChatSliderViewController
+@synthesize serviceConnector;
+@synthesize prefs;
+@synthesize chatPeople;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,9 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.chatPeople = [NSArray arrayWithObjects:@"Peter",@"Lee",@"Anne", nil];
-    
+    prefs = [NSUserDefaults standardUserDefaults];
+    serviceConnector = [[ServiceConnector alloc] init];
+    serviceConnector.delegate = self;
+    NSMutableDictionary *temp = [[NSMutableDictionary alloc] init];
+    [temp setValue:[prefs objectForKey:@"emailAddress"] forKey:@"id"];
+    [serviceConnector postDataToWebService:temp webServiceURL:POST_CONNECTED_USERS];
     
     [self.slidingViewController setAnchorLeftPeekAmount:100.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
@@ -42,11 +50,14 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(void)requestReturnedData:(NSData *)data
 {
-    // Return the number of sections.
-    return 1;
+    NSError *error;
+    chatPeople = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error]];
+    NSLog(@"chat ppl %@", chatPeople);
+    [self.tableView reloadData];
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -62,23 +73,41 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self.chatPeople objectAtIndex:indexPath.row]];
+    NSString *fn = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"first_name"];
+    NSString *ln = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"last_name"];
+    
+    cell.textLabel.text =[NSString stringWithFormat:@"%@ %@", fn, ln];
     cell.textLabel.textAlignment = UITextAlignmentRight;
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    NSString *identifier = [NSString stringWithFormat:@"%@", [self.chatPeople objectAtIndex:indexPath.row]];
-//    UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSString *cellIdentifier = @"chatCell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+//    }
 //    
-//    [self.slidingViewController anchorTopViewOffScreenTo:ECLeft animations:nil onComplete:^{
-//        CGRect frame = self.slidingViewController.topViewController.view.frame;
-//        self.slidingViewController.topViewController = newTopViewController;
-//        self.slidingViewController.topViewController.view.frame = frame;
-//        [self.slidingViewController resetTopView];
-//    }];
+//    [self performSegueWithIdentifier:@"pushToChatSegue" sender:cell];
+//}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    NSString *toChatEmailID = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSString *fn = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"first_name"];
+    NSString *ln = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"last_name"];
+    
+    MessagesViewController *messageVc = [segue destinationViewController];
+    messageVc.firstName = fn;
+    messageVc.lastName = ln;
+    messageVc.passedOverEmailID = @"1";
 }
+
+
 - (IBAction)backBtn:(id)sender {
 }
 @end
