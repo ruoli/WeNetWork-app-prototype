@@ -81,30 +81,26 @@
     return cell;
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSString *cellIdentifier = @"chatCell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-//    }
-//    
-//    [self performSegueWithIdentifier:@"pushToChatSegue" sender:cell];
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"pushToChatSegue" sender:self];
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"prepareforsegue: %@", segue.identifier);
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
     NSString *toChatEmailID = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"id"];
     NSString *fn = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"first_name"];
     NSString *ln = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"last_name"];
     
-    MessagesViewController *messageVc = [segue destinationViewController];
-    messageVc.firstName = fn;
-    messageVc.lastName = ln;
-    messageVc.passedOverEmailID = @"1";
+    ChatViewController *chatvc = [segue destinationViewController];
+    chatvc.firstName = fn;
+    chatvc.lastName = ln;
+    chatvc.passedOverEmailID = toChatEmailID;
+    
 }
 
 

@@ -13,7 +13,4 @@
 @interface MessagesViewController : UIViewController
 @property (strong,nonatomic)UIButton *menuBtn;
 @property (strong,nonatomic)UIButton *chatBtn;
-@property(strong,nonatomic)NSString *passedOverEmailID;
-@property(strong,nonatomic)NSString *firstName;
-@property(strong,nonatomic)NSString *lastName;
 @end

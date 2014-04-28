@@ -112,7 +112,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zo6-i2-5Ow" kind="modal" id="RDX-N6-WBg"/>
+                                    <segue destination="zo6-i2-5Ow" kind="modal" identifier="pushToChatSegue" id="RDX-N6-WBg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -200,6 +200,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backBtn" destination="Rl9-VJ-Kv7" id="dZW-Gh-Fiv"/>
+                        <outlet property="navigationBar" destination="LW2-eH-RkN" id="xor-tm-DJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEZ-Aw-puL" userLabel="First Responder" sceneMemberID="firstResponder"/>

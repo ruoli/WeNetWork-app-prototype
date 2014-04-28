@@ -16,9 +16,6 @@
 
 @synthesize menuBtn;
 @synthesize chatBtn;
-@synthesize passedOverEmailID;
-@synthesize firstName;
-@synthesize lastName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSLog(@"%@ %@", firstName,lastName);
-//    self.navigationItem.title = [NSString stringWithFormat:@"Chatting with %@ %@", firstName, lastName];
     
 	self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;

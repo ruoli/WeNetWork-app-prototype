@@ -14,6 +14,11 @@
 
 @implementation ChatViewController
 
+@synthesize passedOverEmailID;
+@synthesize firstName;
+@synthesize lastName;
+@synthesize navigationBar;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSLog(@"%@ %@", firstName,lastName);
+    navigationBar.topItem.title = [NSString stringWithFormat:@"Chatting with %@ %@", firstName, lastName];
+    
     
 }
 
