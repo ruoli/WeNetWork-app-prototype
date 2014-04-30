@@ -45,6 +45,7 @@
 		DACD418518D0D1F8005B3747 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD418418D0D1F8005B3747 /* SDWebImage.framework */; };
 		DACD418718D0D238005B3747 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACD418618D0D238005B3747 /* ImageIO.framework */; };
 		DACD418918D0D412005B3747 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = DACD418818D0D412005B3747 /* placeholder.png */; };
+		DAD6C33C190FF2FA0058DCDC /* ChattingFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD6C33B190FF2FA0058DCDC /* ChattingFlow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		DACD418418D0D1F8005B3747 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		DACD418618D0D238005B3747 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		DACD418818D0D412005B3747 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		DAD6C33A190FF2FA0058DCDC /* ChattingFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChattingFlow.h; sourceTree = "<group>"; };
+		DAD6C33B190FF2FA0058DCDC /* ChattingFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChattingFlow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				180B484E18ECB8A6008DCF1B /* NSString+ConvertToArray.m */,
 				DAAF219718FC36BB00AEFA0F /* PostRequestAdaptor.h */,
 				DAAF219818FC36BB00AEFA0F /* PostRequestAdaptor.m */,
+				DAD6C33A190FF2FA0058DCDC /* ChattingFlow.h */,
+				DAD6C33B190FF2FA0058DCDC /* ChattingFlow.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				DAAF219918FC36BB00AEFA0F /* PostRequestAdaptor.m in Sources */,
 				180B484F18ECB8A6008DCF1B /* NSString+ConvertToArray.m in Sources */,
 				18B2738B18EB4E33007A2225 /* HomeViewController.m in Sources */,
+				DAD6C33C190FF2FA0058DCDC /* ChattingFlow.m in Sources */,
 				18DDF07118C6A7D800330998 /* SelfProfileViewController.m in Sources */,
 				18DDF06518C6A6B500330998 /* InitViewController.m in Sources */,
 				18DB095B18C7D8A800CAD97C /* ChatSliderViewController.m in Sources */,

@@ -67,6 +67,7 @@
 -(IBAction)revealChat:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    
 }
 
 

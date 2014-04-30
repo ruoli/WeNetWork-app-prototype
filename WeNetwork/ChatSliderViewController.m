@@ -92,14 +92,10 @@
     NSLog(@"prepareforsegue: %@", segue.identifier);
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    NSString *toChatEmailID = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"id"];
-    NSString *fn = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"first_name"];
-    NSString *ln = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"last_name"];
-    
     ChatViewController *chatvc = [segue destinationViewController];
-    chatvc.firstName = fn;
-    chatvc.lastName = ln;
-    chatvc.passedOverEmailID = toChatEmailID;
+    chatvc.firstName = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"first_name"];
+    chatvc.lastName = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"last_name"];
+    chatvc.passedOverEmailID = [[self.chatPeople objectAtIndex:indexPath.row] objectForKey:@"id"];
     
 }
 
